@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Sami-Severi Sjöberg — story, values, mission, and career journey." />
+  <title>About — Sami-Severi Sjöberg</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body data-page="about">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+  <div class="loader" aria-hidden="true"><div class="loader__logo">S</div><div class="loader__bar"><div class="loader__bar-fill"></div></div></div>
+
+  <header class="navbar" role="banner">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo"><span class="navbar__logo-mark">S</span><span>Sami-Severi Sjöberg</span></a>
+      <nav class="navbar__links navbar__links--desktop" aria-label="Primary navigation"></nav>
+      <div class="navbar__actions">
+        <button class="theme-toggle" type="button" aria-label="Toggle theme">
+          <svg class="theme-toggle__icon--dark" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="theme-toggle__icon--light" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="navbar__toggle" type="button" aria-label="Open menu" aria-expanded="false"><span class="navbar__toggle-bar"></span></button>
+      </div>
+    </div>
+    <nav class="navbar__drawer" aria-label="Mobile navigation"><div class="navbar__drawer-links"></div></nav>
+  </header>
+
+  <main id="main">
+    <div class="page-hero container">
+      <h1 class="page-hero__title reveal">About Me</h1>
+      <p class="page-hero__desc reveal">My story, values, mission, and the journey that shaped who I am today.</p>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div class="home-preview__card glass reveal">
+          <h3>Coming in Phase 2</h3>
+          <p>Personal introduction, career timeline, values, mission, and fun facts will be built here.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand"><a href="index.html" class="navbar__logo"><span class="navbar__logo-mark">S</span><span>Sami-Severi Sjöberg</span></a><p>Building premium digital experiences.</p></div>
+        <div><p class="footer__nav-title">Navigation</p><nav class="footer__links"><a href="index.html">Home</a><a href="about.html">About</a><a href="experience.html">Experience</a><a href="projects.html">Projects</a><a href="skills.html">Skills</a><a href="education.html">Education</a><a href="hobbies.html">Hobbies</a><a href="contact.html">Contact</a></nav></div>
+        <div><p class="footer__nav-title">Connect</p><div class="footer__social"><a href="https://linkedin.com" aria-label="LinkedIn"><img src="assets/icons/linkedin.svg" alt="" width="18" height="18" /></a><a href="https://github.com" aria-label="GitHub"><img src="assets/icons/github.svg" alt="" width="18" height="18" /></a><a href="mailto:hello@example.com" aria-label="Email"><img src="assets/icons/mail.svg" alt="" width="18" height="18" /></a></div></div>
+      </div>
+      <div class="footer__bottom"><p>&copy; <span class="year"></span> Sami-Severi Sjöberg.</p><p class="footer__built">Built with HTML, CSS &amp; JavaScript</p></div>
+    </div>
+  </footer>
+  <button class="back-to-top" type="button" aria-label="Back to top"><img src="assets/icons/arrow-up.svg" alt="" width="20" height="20" /></button>
+  <script type="module" src="js/main.js"></script>
+  <script>document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear())</script>
+</body>
+</html>

@@ -1,17 +1,295 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Portfolio of Sami-Severi Sjöberg — software developer, designer, and builder."
-    />
-    <title>Sami-Severi Sjöberg — Portfolio</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sami-Severi Sjöberg — Frontend Engineer, UI/UX Designer, and Creative Developer. Premium personal portfolio." />
+  <meta name="author" content="Sami-Severi Sjöberg" />
+  <meta name="theme-color" content="#09090b" />
+  <title>Sami-Severi Sjöberg — Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body data-page="home">
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" role="progressbar" aria-label="Page scroll progress" aria-valuemin="0" aria-valuemax="100"></div>
+
+  <!-- Page loader -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader__logo">S</div>
+    <div class="loader__bar"><div class="loader__bar-fill"></div></div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="navbar" role="banner">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Sami-Severi Sjöberg — Home">
+        <span class="navbar__logo-mark">S</span>
+        <span>Sami-Severi Sjöberg</span>
+      </a>
+
+      <nav class="navbar__links navbar__links--desktop" aria-label="Primary navigation">
+        <!-- Populated by navigation.js -->
+      </nav>
+
+      <div class="navbar__actions">
+        <button class="theme-toggle" type="button" aria-label="Toggle light/dark theme">
+          <svg class="theme-toggle__icon--dark" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          </svg>
+          <svg class="theme-toggle__icon--light" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <button class="navbar__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="navbar__toggle-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <nav class="navbar__drawer" id="mobile-nav" aria-label="Mobile navigation">
+      <div class="navbar__drawer-links">
+        <!-- Populated by navigation.js -->
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ================================================================
+         HERO
+         ================================================================ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__gradient-orb hero__gradient-orb--1"></div>
+        <div class="hero__gradient-orb hero__gradient-orb--2"></div>
+        <div class="hero__grid"></div>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <div class="hero__badge">
+            <span class="hero__badge-dot" aria-hidden="true"></span>
+            Available for new opportunities
+          </div>
+
+          <h1 class="hero__title" id="hero-title">
+            Hi, I'm <span class="hero__title-accent">Sami-Severi Sjöberg</span>
+          </h1>
+
+          <p class="hero__role" aria-live="polite">
+            <span data-typing></span><span class="hero__role-cursor" aria-hidden="true"></span>
+          </p>
+
+          <p class="hero__intro">
+            I craft premium digital experiences that blend beautiful design with
+            robust engineering. Passionate about building products that feel
+            effortless, accessible, and unforgettable.
+          </p>
+
+          <div class="hero__actions">
+            <span class="magnetic-wrap">
+              <a href="projects.html" class="btn btn--primary" data-magnetic data-ripple>View My Work</a>
+            </span>
+            <span class="magnetic-wrap">
+              <a href="contact.html" class="btn btn--ghost" data-magnetic data-ripple>Get In Touch</a>
+            </span>
+          </div>
+
+          <div class="hero__social" aria-label="Social links">
+            <a href="https://linkedin.com" class="hero__social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <img src="assets/icons/linkedin.svg" alt="" width="20" height="20" />
+            </a>
+            <a href="https://github.com" class="hero__social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <img src="assets/icons/github.svg" alt="" width="20" height="20" />
+            </a>
+            <a href="mailto:hello@example.com" class="hero__social-link" aria-label="Email">
+              <img src="assets/icons/mail.svg" alt="" width="20" height="20" />
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="hero__photo-frame">
+            <div class="hero__photo-placeholder">
+              <img src="assets/icons/user.svg" alt="" width="64" height="64" />
+              <span>Professional Photo</span>
+            </div>
+            <div class="hero__photo-glow" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about-preview" class="hero__scroll" aria-label="Scroll to content">
+        <span>Scroll</span>
+        <span class="hero__scroll-line" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- ================================================================
+         HOME PREVIEWS (skeleton — full content in upcoming phases)
+         ================================================================ -->
+    <div class="home-preview">
+
+      <section class="section" id="about-preview">
+        <div class="container">
+          <div class="section__header reveal">
+            <span class="section__eyebrow">About</span>
+            <h2 class="section__title">Who I Am</h2>
+            <p class="section__subtitle">A glimpse into my background, values, and what drives me.</p>
+          </div>
+          <div class="home-preview__card glass reveal">
+            <h3>About Preview</h3>
+            <p>Full About page coming in the next phase.</p>
+            <br />
+            <a href="about.html" class="btn btn--ghost btn--sm" data-ripple>Learn More →</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="featured-projects">
+        <div class="container">
+          <div class="section__header reveal">
+            <span class="section__eyebrow">Work</span>
+            <h2 class="section__title">Featured Projects</h2>
+            <p class="section__subtitle">Selected work showcasing design and engineering craft.</p>
+          </div>
+          <div class="home-preview__card glass reveal">
+            <h3>Projects Preview</h3>
+            <p>Project grid and detail pages coming in the next phase.</p>
+            <br />
+            <a href="projects.html" class="btn btn--ghost btn--sm" data-ripple>View All Projects →</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="skills-preview">
+        <div class="container">
+          <div class="section__header reveal">
+            <span class="section__eyebrow">Expertise</span>
+            <h2 class="section__title">Skills Overview</h2>
+          </div>
+          <div class="home-preview__card glass reveal">
+            <h3>Skills Preview</h3>
+            <p>Animated skill charts coming in the next phase.</p>
+            <br />
+            <a href="skills.html" class="btn btn--ghost btn--sm" data-ripple>View Skills →</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="experience-preview">
+        <div class="container">
+          <div class="section__header reveal">
+            <span class="section__eyebrow">Career</span>
+            <h2 class="section__title">Experience</h2>
+          </div>
+          <div class="home-preview__card glass reveal">
+            <h3>Experience Preview</h3>
+            <p>Interactive timeline coming in the next phase.</p>
+            <br />
+            <a href="experience.html" class="btn btn--ghost btn--sm" data-ripple>View Experience →</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="testimonials">
+        <div class="container">
+          <div class="section__header reveal">
+            <span class="section__eyebrow">Testimonials</span>
+            <h2 class="section__title">What People Say</h2>
+          </div>
+          <div class="home-preview__card glass reveal">
+            <h3>Testimonials</h3>
+            <p>Client and colleague testimonials placeholder.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact-cta">
+        <div class="container" style="text-align: center;">
+          <div class="section__header reveal" style="margin-inline: auto;">
+            <span class="section__eyebrow">Let's Connect</span>
+            <h2 class="section__title">Ready to Build Something Great?</h2>
+            <p class="section__subtitle" style="margin-inline: auto;">I'd love to hear about your project. Let's create something exceptional together.</p>
+          </div>
+          <div class="reveal">
+            <a href="contact.html" class="btn btn--primary" data-magnetic data-ripple>Start a Conversation</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="index.html" class="navbar__logo">
+            <span class="navbar__logo-mark">S</span>
+            <span>Sami-Severi Sjöberg</span>
+          </a>
+          <p>Building premium digital experiences with HTML, CSS &amp; JavaScript.</p>
+        </div>
+
+        <div>
+          <p class="footer__nav-title">Navigation</p>
+          <nav class="footer__links" aria-label="Footer navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="experience.html">Experience</a>
+            <a href="projects.html">Projects</a>
+            <a href="skills.html">Skills</a>
+            <a href="education.html">Education</a>
+            <a href="hobbies.html">Hobbies</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="footer__nav-title">Connect</p>
+          <div class="footer__social">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <img src="assets/icons/linkedin.svg" alt="" width="18" height="18" />
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <img src="assets/icons/github.svg" alt="" width="18" height="18" />
+            </a>
+            <a href="mailto:hello@example.com" aria-label="Email">
+              <img src="assets/icons/mail.svg" alt="" width="18" height="18" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; <span id="year"></span> Sami-Severi Sjöberg. All rights reserved.</p>
+        <p class="footer__built">Built with HTML, CSS &amp; JavaScript</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" type="button" aria-label="Back to top">
+    <img src="assets/icons/arrow-up.svg" alt="" width="20" height="20" />
+  </button>
+
+  <script type="module" src="js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+</body>
 </html>
