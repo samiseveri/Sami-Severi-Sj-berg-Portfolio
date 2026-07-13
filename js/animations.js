@@ -100,11 +100,74 @@ const Animations = (() => {
     })
   }
 
+  /** Animated number counters triggered on scroll */
+  function initAnimatedCounters() {
+    const counters = document.querySelectorAll('[data-count]')
+    if (!counters.length) return
+
+    const animate = (el) => {
+      const target = parseInt(el.dataset.count, 10)
+      const duration = 1400
+      const start = performance.now()
+
+      const step = (now) => {
+        const progress = Math.min((now - start) / duration, 1)
+        const eased = 1 - Math.pow(1 - progress, 3)
+        el.textContent = Math.floor(eased * target)
+        if (progress < 1) requestAnimationFrame(step)
+        else el.textContent = target
+      }
+
+      requestAnimationFrame(step)
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return
+          animate(entry.target)
+          observer.unobserve(entry.target)
+        })
+      },
+      { threshold: 0.5 },
+    )
+
+    counters.forEach((el) => observer.observe(el))
+  }
+
+  /** Subtle 3D tilt on value cards */
+  function initCardTilt() {
+    document.querySelectorAll('[data-tilt]').forEach((card) => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect()
+        const x = (e.clientX - rect.left) / rect.width - 0.5
+        const y = (e.clientY - rect.top) / rect.height - 0.5
+        card.style.transform = `perspective(600px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg) translateY(-4px)`
+      })
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = ''
+      })
+    })
+  }
+
+  /** Fun fact card pop interaction */
+  function initFactCards() {
+    document.querySelectorAll('[data-fact]').forEach((card) => {
+      card.addEventListener('click', () => {
+        card.classList.toggle('is-active')
+      })
+    })
+  }
+
   function init() {
     initScrollReveal()
     initTypingEffect()
     initMagneticButtons()
     initRippleEffect()
+    initAnimatedCounters()
+    initCardTilt()
+    initFactCards()
   }
 
   return { init }

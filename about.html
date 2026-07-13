@@ -37,11 +37,232 @@
       <h1 class="page-hero__title reveal">About Me</h1>
       <p class="page-hero__desc reveal">My story, values, mission, and the journey that shaped who I am today.</p>
     </div>
-    <section class="section">
+
+    <!-- Introduction -->
+    <section class="section about-intro" aria-labelledby="intro-heading">
+      <div class="container about-intro__grid">
+        <div class="about-intro__visual reveal reveal--left">
+          <div class="hero__photo-frame about-intro__photo">
+            <div class="hero__photo-placeholder">
+              <img src="assets/icons/user.svg" alt="" width="64" height="64" />
+              <span>Professional Photo</span>
+            </div>
+            <div class="hero__photo-glow" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="about-intro__content reveal reveal--right">
+          <span class="section__eyebrow">Introduction</span>
+          <h2 class="section__title" id="intro-heading">Building with purpose</h2>
+          <p class="about-intro__lead">
+            I'm <strong>Sami-Severi Sjöberg</strong> — a frontend engineer and designer
+            who believes the best digital products sit at the intersection of craft,
+            clarity, and empathy.
+          </p>
+          <p>
+            With a background spanning interface design and full-stack development,
+            I help teams ship products that feel polished from the first pixel to the
+            last line of code. I care deeply about accessibility, performance, and the
+            details most people never notice — but always feel.
+          </p>
+          <div class="about-stats reveal-stagger">
+            <div class="about-stat reveal">
+              <div class="about-stat__number"><span class="about-stat__value" data-count="5">0</span><span class="about-stat__suffix">+</span></div>
+              <span class="about-stat__label">Years Experience</span>
+            </div>
+            <div class="about-stat reveal">
+              <div class="about-stat__number"><span class="about-stat__value" data-count="40">0</span><span class="about-stat__suffix">+</span></div>
+              <span class="about-stat__label">Projects Delivered</span>
+            </div>
+            <div class="about-stat reveal">
+              <div class="about-stat__number"><span class="about-stat__value" data-count="12">0</span></div>
+              <span class="about-stat__label">Happy Clients</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- My Story -->
+    <section class="section about-story" aria-labelledby="story-heading">
       <div class="container">
-        <div class="home-preview__card glass reveal">
-          <h3>Coming in Phase 2</h3>
-          <p>Personal introduction, career timeline, values, mission, and fun facts will be built here.</p>
+        <div class="section__header reveal">
+          <span class="section__eyebrow">My Story</span>
+          <h2 class="section__title" id="story-heading">How it all started</h2>
+        </div>
+        <div class="about-story__grid">
+          <div class="glass about-story__card reveal">
+            <p>
+              My journey into tech began with curiosity — taking apart interfaces I admired
+              and wondering <em>how</em> they worked. What started as late-night experiments
+              with HTML and CSS grew into a genuine passion for building things people love to use.
+            </p>
+          </div>
+          <div class="glass about-story__card reveal">
+            <p>
+              Along the way I discovered that great software isn't just functional — it's
+              thoughtful. Every animation, every spacing decision, every word of microcopy
+              shapes how someone feels when they interact with your product.
+            </p>
+          </div>
+          <div class="glass about-story__card reveal">
+            <p>
+              Today I work at the intersection of design and engineering, partnering with
+              startups and teams who want to raise the bar. Whether it's a design system,
+              a marketing site, or a complex web app — I bring the same level of care to every project.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values -->
+    <section class="section about-values" aria-labelledby="values-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__eyebrow">Values</span>
+          <h2 class="section__title" id="values-heading">What I stand for</h2>
+          <p class="section__subtitle">The principles that guide every decision I make.</p>
+        </div>
+        <div class="about-values__grid reveal-stagger">
+          <article class="value-card reveal" data-tilt>
+            <div class="value-card__icon" aria-hidden="true">✦</div>
+            <h3 class="value-card__title">Craft</h3>
+            <p class="value-card__desc">Excellence in every detail — from architecture to the final hover state.</p>
+          </article>
+          <article class="value-card reveal" data-tilt>
+            <div class="value-card__icon" aria-hidden="true">◎</div>
+            <h3 class="value-card__title">Clarity</h3>
+            <p class="value-card__desc">Simple, honest communication in code, design, and collaboration.</p>
+          </article>
+          <article class="value-card reveal" data-tilt>
+            <div class="value-card__icon" aria-hidden="true">♥</div>
+            <h3 class="value-card__title">Empathy</h3>
+            <p class="value-card__desc">Building for real people with real needs — accessibility is non-negotiable.</p>
+          </article>
+          <article class="value-card reveal" data-tilt>
+            <div class="value-card__icon" aria-hidden="true">↗</div>
+            <h3 class="value-card__title">Growth</h3>
+            <p class="value-card__desc">Always learning, always improving — stagnation is the only failure.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Motivation -->
+    <section class="section about-mission" aria-labelledby="mission-heading">
+      <div class="container about-mission__grid">
+        <div class="glass about-mission__block reveal reveal--left">
+          <span class="section__eyebrow">Mission</span>
+          <h2 class="about-mission__title" id="mission-heading">My mission</h2>
+          <p>
+            To create digital experiences that empower people — making technology feel
+            human, intuitive, and genuinely delightful. I want every product I touch to
+            leave users thinking: <em>"This just works."</em>
+          </p>
+        </div>
+        <div class="glass about-mission__block reveal reveal--right">
+          <span class="section__eyebrow">Motivation</span>
+          <h2 class="about-mission__title">What drives me</h2>
+          <p>
+            The moment when a complex problem clicks into an elegant solution. Seeing a
+            user's face light up during a usability test. Shipping something you're proud
+            of with a team that shares your standards. That's what gets me out of bed.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Career Journey Timeline -->
+    <section class="section about-timeline-section" aria-labelledby="journey-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__eyebrow">Career Journey</span>
+          <h2 class="section__title" id="journey-heading">Milestones along the way</h2>
+          <p class="section__subtitle">Key moments that shaped my path as a builder.</p>
+        </div>
+        <ol class="timeline reveal-stagger">
+          <li class="timeline__item reveal">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__card glass">
+              <time class="timeline__date" datetime="2019">2019</time>
+              <h3 class="timeline__title">First lines of code</h3>
+              <p>Discovered web development through a university project. Built my first website and was hooked.</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__card glass">
+              <time class="timeline__date" datetime="2021">2021</time>
+              <h3 class="timeline__title">Freelance beginnings</h3>
+              <p>Started taking on client projects — landing pages, brand sites, and small web apps.</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__card glass">
+              <time class="timeline__date" datetime="2023">2023</time>
+              <h3 class="timeline__title">Design meets engineering</h3>
+              <p>Deepened my UI/UX skills and began leading frontend architecture on product teams.</p>
+            </div>
+          </li>
+          <li class="timeline__item reveal">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__card glass">
+              <time class="timeline__date" datetime="2025">2025</time>
+              <h3 class="timeline__title">Portfolio &amp; beyond</h3>
+              <p>Launching this portfolio and open to exciting collaborations, contracts, and full-time roles.</p>
+            </div>
+          </li>
+        </ol>
+        <p class="about-timeline__cta reveal">
+          <a href="experience.html" class="btn btn--ghost btn--sm" data-ripple>View full experience →</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Fun Facts -->
+    <section class="section about-facts" aria-labelledby="facts-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__eyebrow">Fun Facts</span>
+          <h2 class="section__title" id="facts-heading">A little more about me</h2>
+        </div>
+        <div class="about-facts__grid reveal-stagger">
+          <button class="fact-card reveal" type="button" data-fact>
+            <span class="fact-card__emoji" aria-hidden="true">☕</span>
+            <span class="fact-card__text">Powered by too much coffee</span>
+          </button>
+          <button class="fact-card reveal" type="button" data-fact>
+            <span class="fact-card__emoji" aria-hidden="true">🏔️</span>
+            <span class="fact-card__text">Weekend hiker &amp; nature lover</span>
+          </button>
+          <button class="fact-card reveal" type="button" data-fact>
+            <span class="fact-card__emoji" aria-hidden="true">🎵</span>
+            <span class="fact-card__text">Codes best with lo-fi beats</span>
+          </button>
+          <button class="fact-card reveal" type="button" data-fact>
+            <span class="fact-card__emoji" aria-hidden="true">📚</span>
+            <span class="fact-card__text">Always reading something new</span>
+          </button>
+          <button class="fact-card reveal" type="button" data-fact>
+            <span class="fact-card__emoji" aria-hidden="true">🤖</span>
+            <span class="fact-card__text">Fascinated by AI &amp; creative tools</span>
+          </button>
+          <button class="fact-card reveal" type="button" data-fact>
+            <span class="fact-card__emoji" aria-hidden="true">🇫🇮</span>
+            <span class="fact-card__text">Based in Finland, working globally</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section about-cta">
+      <div class="container" style="text-align: center;">
+        <h2 class="section__title reveal">Let's work together</h2>
+        <p class="section__subtitle reveal" style="margin-inline: auto;">Have a project in mind? I'd love to hear about it.</p>
+        <div class="reveal" style="margin-top: 1.5rem;">
+          <a href="contact.html" class="btn btn--primary" data-magnetic data-ripple>Get In Touch</a>
         </div>
       </div>
     </section>
