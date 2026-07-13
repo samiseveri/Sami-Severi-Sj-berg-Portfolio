@@ -8,6 +8,7 @@ import Experience from './experience.js'
 import Projects from './projects.js'
 import ProjectDetails from './project-details.js'
 import Skills from './skills.js'
+import SocialLinks from './social-links.js'
 
 const Main = (() => {
   /** Page loading screen */
@@ -82,6 +83,7 @@ const Main = (() => {
     initBackToTop()
     initLazyLoad()
     Navigation.init()
+    SocialLinks.init()
     Animations.init()
     ContactForm.init()
     Experience.init()

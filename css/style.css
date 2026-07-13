@@ -696,7 +696,8 @@ ol {
   box-shadow: 0 8px 24px -8px var(--accent-glow);
 }
 
-.hero__social-link svg {
+.hero__social-link svg,
+.hero__social-link img {
   width: 20px;
   height: 20px;
 }
@@ -760,6 +761,14 @@ ol {
 .hero__photo-placeholder span {
   font-size: 0.85rem;
   font-weight: 500;
+}
+
+.hero__photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 
 .hero__photo-glow {
