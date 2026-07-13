@@ -1,13 +1,9 @@
 /**
  * Animations module — scroll reveals, typing effect, magnetic buttons, ripples
  */
+import { TYPING_PHRASES } from './site-data.js'
+
 const Animations = (() => {
-  const TYPING_PHRASES = [
-    'Frontend Engineer',
-    'UI/UX Designer',
-    'Creative Developer',
-    'Problem Solver',
-  ]
 
   let typeIndex = 0
   let charIndex = 0
