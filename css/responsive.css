@@ -175,11 +175,30 @@
   .about-facts__grid {
     grid-template-columns: 1fr 1fr;
   }
-}
 
-/* --------------------------------------------------------------------------
-   Large screens
-   -------------------------------------------------------------------------- */
+  /* Experience page */
+  .exp-summary__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .exp-card__top {
+    flex-direction: column;
+  }
+
+  .exp-card__duration {
+    align-self: flex-start;
+  }
+
+  .exp-card__details {
+    grid-template-columns: 1fr;
+    padding-left: 1.75rem;
+    gap: 1.5rem;
+  }
+
+  .exp-card__header {
+    padding: 1.25rem;
+  }
+}
 @media (min-width: 1400px) {
   :root {
     --container: 1320px;

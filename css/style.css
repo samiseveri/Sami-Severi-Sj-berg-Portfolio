@@ -1250,3 +1250,240 @@ ol {
   border-top: 1px solid var(--border);
 }
 
+/* --------------------------------------------------------------------------
+   Experience page
+   -------------------------------------------------------------------------- */
+.exp-summary {
+  padding-top: 0;
+}
+
+.exp-summary__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.exp-summary__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.exp-summary__number {
+  display: flex;
+  align-items: baseline;
+}
+
+.exp-summary__value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.exp-summary__suffix {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.exp-summary__label {
+  margin-top: 0.35rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.exp-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 860px;
+  margin-inline: auto;
+}
+
+.exp-card {
+  overflow: hidden;
+  transition: border-color var(--duration), box-shadow var(--duration);
+}
+
+.exp-card.is-open {
+  border-color: rgba(99, 102, 241, 0.35);
+  box-shadow: var(--shadow-glow);
+}
+
+.exp-card__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  width: 100%;
+  padding: 1.75rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background var(--duration);
+}
+
+.exp-card__header:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.exp-card__line {
+  position: relative;
+  flex-shrink: 0;
+  width: 2px;
+  align-self: stretch;
+  min-height: 48px;
+  background: linear-gradient(to bottom, var(--accent), var(--accent-2));
+  border-radius: 2px;
+}
+
+.exp-card__dot {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.exp-card__main {
+  flex: 1;
+  min-width: 0;
+}
+
+.exp-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.65rem;
+}
+
+.exp-card__role {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.exp-card__company {
+  font-size: 0.95rem;
+  color: var(--accent-2);
+  font-weight: 500;
+  margin-top: 0.15rem;
+}
+
+.exp-card__duration {
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-subtle);
+  white-space: nowrap;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border);
+  background: var(--bg-glass);
+}
+
+.exp-card__preview {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 0.85rem;
+}
+
+.exp-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.exp-card__tags li {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  color: var(--accent-light);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  background: rgba(99, 102, 241, 0.08);
+}
+
+.exp-card__chevron {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  transition: transform var(--duration) var(--ease-out), color var(--duration);
+}
+
+.exp-card.is-open .exp-card__chevron {
+  transform: rotate(180deg);
+  color: var(--accent);
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+.exp-card__body {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.45s var(--ease-out);
+}
+
+.exp-card__details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 0 1.75rem 1.75rem 4.5rem;
+  border-top: 1px solid var(--border);
+  margin-top: 0;
+  padding-top: 1.5rem;
+}
+
+.exp-card__col h4 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  margin-bottom: 0.75rem;
+}
+
+.exp-card__col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.exp-card__col li {
+  position: relative;
+  padding-left: 1.1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.exp-card__col li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+

@@ -4,6 +4,7 @@
 import Navigation from './navigation.js'
 import Animations from './animations.js'
 import ContactForm from './contact.js'
+import Experience from './experience.js'
 
 const Main = (() => {
   /** Page loading screen */
@@ -80,6 +81,7 @@ const Main = (() => {
     Navigation.init()
     Animations.init()
     ContactForm.init()
+    Experience.init()
   }
 
   if (document.readyState === 'loading') {
