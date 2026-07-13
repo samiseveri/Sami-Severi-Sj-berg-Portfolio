@@ -696,7 +696,8 @@ ol {
   box-shadow: 0 8px 24px -8px var(--accent-glow);
 }
 
-.hero__social-link svg {
+.hero__social-link svg,
+.hero__social-link img {
   width: 20px;
   height: 20px;
 }

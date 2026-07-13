@@ -8,8 +8,9 @@ export const SITE = {
   title: 'Full Stack Engineer & ICT Engineering Student',
   location: 'Turku, Finland',
   email: 'samiseveri.sjoberg@gmail.com',
-  linkedin: 'https://www.linkedin.com/in/sami-severi-sj%C3%B6berg-179a92273',
+  linkedin: 'https://www.linkedin.com/in/sami-severi-sjöberg-179a92273',
   github: 'https://github.com/samiseveri',
+  instagram: 'https://www.instagram.com/samiseveri',
   profileImage: 'assets/images/profile.jpg',
   cvPath: 'assets/cv/cv.pdf',
   tagline:
