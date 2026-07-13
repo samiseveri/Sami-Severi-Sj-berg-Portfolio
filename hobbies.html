@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Hobbies and interests of Sami-Severi Sjöberg." />
+  <title>Hobbies — Sami-Severi Sjöberg</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body data-page="hobbies">
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+  <div class="loader" aria-hidden="true"><div class="loader__logo">S</div><div class="loader__bar"><div class="loader__bar-fill"></div></div></div>
+  <header class="navbar" role="banner">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo"><span class="navbar__logo-mark">S</span><span>Sami-Severi Sjöberg</span></a>
+      <nav class="navbar__links navbar__links--desktop" aria-label="Primary navigation"></nav>
+      <div class="navbar__actions">
+        <button class="theme-toggle" type="button" aria-label="Toggle theme"><svg class="theme-toggle__icon--dark" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg><svg class="theme-toggle__icon--light" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+        <button class="navbar__toggle" type="button" aria-label="Open menu" aria-expanded="false"><span class="navbar__toggle-bar"></span></button>
+      </div>
+    </div>
+    <nav class="navbar__drawer" aria-label="Mobile navigation"><div class="navbar__drawer-links"></div></nav>
+  </header>
+  <main id="main">
+    <div class="page-hero container">
+      <h1 class="page-hero__title reveal">Hobbies</h1>
+      <p class="page-hero__desc reveal">What keeps me inspired outside of code.</p>
+    </div>
+    <section class="section">
+      <div class="container hobbies-grid reveal-stagger">
+        <article class="hobby-card glass reveal" data-tilt><span class="hobby-card__icon">📷</span><h3>Photography</h3><p>Capturing landscapes and urban architecture across Finland.</p></article>
+        <article class="hobby-card glass reveal" data-tilt><span class="hobby-card__icon">🎮</span><h3>Gaming</h3><p>Indie games, puzzle titles, and co-op adventures with friends.</p></article>
+        <article class="hobby-card glass reveal" data-tilt><span class="hobby-card__icon">📚</span><h3>Reading</h3><p>Tech books, sci-fi novels, and design theory essays.</p></article>
+        <article class="hobby-card glass reveal" data-tilt><span class="hobby-card__icon">🏋️</span><h3>Fitness</h3><p>Gym sessions, running trails, and staying active daily.</p></article>
+        <article class="hobby-card glass reveal" data-tilt><span class="hobby-card__icon">✈️</span><h3>Traveling</h3><p>Exploring new cities, cultures, and cuisines worldwide.</p></article>
+        <article class="hobby-card glass reveal" data-tilt><span class="hobby-card__icon">🎵</span><h3>Music</h3><p>Lo-fi while coding, jazz on weekends, live concerts.</p></article>
+        <article class="hobby-card glass reveal" data-tilt><span class="hobby-card__icon">🤖</span><h3>AI &amp; Tech</h3><p>Experimenting with creative AI tools and new frameworks.</p></article>
+        <article class="hobby-card glass reveal" data-tilt><span class="hobby-card__icon">🌲</span><h3>Nature</h3><p>Hiking, foraging, and disconnecting in the Finnish wilderness.</p></article>
+        <article class="hobby-card glass reveal" data-tilt><span class="hobby-card__icon">🎨</span><h3>Learning</h3><p>Always picking up something new — currently 3D modeling.</p></article>
+      </div>
+    </section>
+  </main>
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand"><a href="index.html" class="navbar__logo"><span class="navbar__logo-mark">S</span><span>Sami-Severi Sjöberg</span></a><p>Building premium digital experiences.</p></div>
+        <div><p class="footer__nav-title">Navigation</p><nav class="footer__links"><a href="index.html">Home</a><a href="about.html">About</a><a href="experience.html">Experience</a><a href="projects.html">Projects</a><a href="skills.html">Skills</a><a href="education.html">Education</a><a href="hobbies.html">Hobbies</a><a href="contact.html">Contact</a></nav></div>
+        <div><p class="footer__nav-title">Connect</p><div class="footer__social"><a href="https://linkedin.com" aria-label="LinkedIn"><img src="assets/icons/linkedin.svg" alt="" width="18" height="18" /></a><a href="https://github.com" aria-label="GitHub"><img src="assets/icons/github.svg" alt="" width="18" height="18" /></a><a href="mailto:hello@example.com" aria-label="Email"><img src="assets/icons/mail.svg" alt="" width="18" height="18" /></a></div></div>
+      </div>
+      <div class="footer__bottom"><p>&copy; <span class="year"></span> Sami-Severi Sjöberg.</p><p class="footer__built">Built with HTML, CSS &amp; JavaScript</p></div>
+    </div>
+  </footer>
+  <button class="back-to-top" type="button" aria-label="Back to top"><img src="assets/icons/arrow-up.svg" alt="" width="20" height="20" /></button>
+  <script type="module" src="js/main.js"></script>
+  <script>document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear())</script>
+</body>
+</html>
