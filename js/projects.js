@@ -8,17 +8,17 @@ const Projects = (() => {
     container.innerHTML = items
       .map(
         (p) => `
-      <article class="project-card glass reveal" data-category="${p.category}">
-        <a href="project-details.html?id=${p.id}" class="project-card__link">
-          <div class="project-card__image">
-            <img src="${p.image}" alt="" width="400" height="240" loading="lazy" />
+      <article class="project-row reveal" data-category="${p.category}">
+        <a href="project-details.html?id=${p.id}" class="project-row__link">
+          <div class="project-row__main">
+            <div class="project-row__meta">
+              <h3 class="project-row__title">${p.title}</h3>
+              <span class="project-row__category">${p.category}</span>
+            </div>
+            <p class="project-row__desc">${p.description}</p>
+            <ul class="project-row__tags">${p.tags.map((t) => `<li>${t}</li>`).join('')}</ul>
           </div>
-          <div class="project-card__body">
-            <h3 class="project-card__title">${p.title}</h3>
-            <p class="project-card__desc">${p.description}</p>
-            <ul class="project-card__tags">${p.tags.map((t) => `<li>${t}</li>`).join('')}</ul>
-            <span class="project-card__cta">View case study →</span>
-          </div>
+          <span class="project-row__cta" aria-hidden="true">View →</span>
         </a>
       </article>`,
       )

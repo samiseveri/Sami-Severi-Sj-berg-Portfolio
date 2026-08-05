@@ -20,16 +20,11 @@ const ProjectDetails = (() => {
     document.title = `${project.title} — Sami-Severi Sjöberg`
 
     root.innerHTML = `
-      <div class="project-detail__hero reveal">
-        <div class="project-detail__image glass">
-          <img src="${project.image}" alt="${project.title}" width="900" height="480" />
-        </div>
-      </div>
       <div class="project-detail__header reveal">
         <span class="section__eyebrow">${project.category}</span>
         <h1 class="project-detail__title">${project.title}</h1>
         <p class="project-detail__desc">${project.overview}</p>
-        <ul class="project-card__tags">${project.tags.map((t) => `<li>${t}</li>`).join('')}</ul>
+        <ul class="project-detail__tags">${project.tags.map((t) => `<li>${t}</li>`).join('')}</ul>
         <div class="project-detail__actions">
           <a href="${project.demo}" class="btn btn--primary" target="_blank" rel="noopener noreferrer" data-ripple>Live Demo</a>
           <a href="${project.github}" class="btn btn--ghost" target="_blank" rel="noopener noreferrer" data-ripple>View on GitHub</a>

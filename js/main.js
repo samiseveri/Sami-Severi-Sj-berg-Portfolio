@@ -6,6 +6,8 @@ import Animations from './animations.js'
 import Experience from './experience.js'
 import Projects from './projects.js'
 import ProjectDetails from './project-details.js'
+import Hobbies from './hobbies.js'
+import HobbyDetails from './hobby-details.js'
 import Skills from './skills.js'
 import SocialLinks from './social-links.js'
 
@@ -100,14 +102,16 @@ const Main = (() => {
     initScrollProgress()
     initBackToTop()
     initLazyLoad()
-    initRecommendation()
     Navigation.init()
     SocialLinks.init()
-    Animations.init()
     Experience.init()
     Projects.init()
     ProjectDetails.init()
+    Hobbies.init()
+    HobbyDetails.init()
     Skills.init()
+    Animations.init()
+    initRecommendation()
   }
 
   if (document.readyState === 'loading') {
