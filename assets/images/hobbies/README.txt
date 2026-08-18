@@ -1,6 +1,12 @@
-# Add your hobby photos here using these filenames:
+# Hobby photos
 
-gaming.jpg
+Place hobby images in this folder.
+
+## Single photo hobbies
+
+Use these filenames (or update paths in js/hobbies-data.js):
+
+gaming.jpg (legacy)
 hardware.jpg
 unity.jpg
 sound.jpg
@@ -10,4 +16,12 @@ cooking.jpg
 nature.jpg
 traveling.jpg
 
-You can also change the paths in js/hobbies-data.js if you prefer different names or formats (.png / .webp).
+## Gaming carousel
+
+The Gaming detail page loads images from gaming-gallery.json in this folder.
+Add or remove filenames there when you update gaming photos.
+
+Current gaming images:
+- gamejam.jpeg
+- more of the boys.jpg
+

@@ -10,7 +10,8 @@ export const HOBBIES = [
     id: 'gaming',
     title: 'Gaming',
     icon: '🎮',
-    image: 'assets/images/hobbies/gaming.jpg',
+    image: 'assets/images/hobbies/gamejam.jpeg',
+    galleryManifest: 'assets/images/hobbies/gaming-gallery.json',
     summary: 'Game jams, indie titles, and game production — from design to playtesting.',
     overview:
       'Gaming has been both a passion and a creative outlet for me. From playing indie titles to shipping projects under game jam deadlines, games taught me production planning, teamwork, and how to turn ideas into playable experiences.',
@@ -20,18 +21,26 @@ export const HOBBIES = [
       'Experience across design, playtesting, and shipping under pressure',
       'Interest in indie games and creative game development',
     ],
+    links: [
+      {
+        type: 'steam',
+        label: 'Steam Profile',
+        href: 'https://steamcommunity.com/profiles/76561198155905414/',
+      },
+    ],
   },
   {
     id: 'hardware',
     title: 'Hardware & Tech',
     icon: '🖥️',
     image: 'assets/images/hobbies/hardware.jpg',
-    summary: 'PC building, Raspberry Pi projects, and exploring new technologies.',
+    summary: 'PC building, Raspberry Pi projects, homelabbing, and exploring new technologies.',
     overview:
-      'My interest in technology started with hardware. Assembling PCs, updating BIOS firmware at Jimm\'s PC-Store, and later working with Raspberry Pi devices gave me a hands-on understanding of how systems work from the inside out.',
+      'My interest in technology started with hardware. Assembling PCs, updating BIOS firmware at Jimm\'s PC-Store, and later working with Raspberry Pi devices gave me a hands-on understanding of how systems work from the inside out. I also enjoy homelabbing — experimenting with servers, networking, and different technologies in my own home lab setup.',
     highlights: [
       'Assembled and maintained computers in a professional retail setting',
       'Hands-on experience with Raspberry Pi and embedded platforms',
+      'Homelab enthusiast — experimenting with servers, networking, and new tech at home',
       'Comfortable troubleshooting hardware and firmware issues',
       'Curiosity for new tools, devices, and technical setups',
     ],

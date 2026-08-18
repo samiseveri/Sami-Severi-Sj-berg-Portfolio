@@ -206,6 +206,19 @@
     width: 100%;
   }
 
+  .hobby-carousel__nav {
+    width: 38px;
+    height: 38px;
+  }
+
+  .hobby-carousel__nav--prev {
+    left: 0.65rem;
+  }
+
+  .hobby-carousel__nav--next {
+    right: 0.65rem;
+  }
+
   .footer__bottom {
     flex-direction: column;
     text-align: center;
