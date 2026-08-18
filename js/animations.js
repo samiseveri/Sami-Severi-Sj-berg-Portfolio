@@ -147,15 +147,6 @@ const Animations = (() => {
     })
   }
 
-  /** Fun fact card pop interaction */
-  function initFactCards() {
-    document.querySelectorAll('[data-fact]').forEach((card) => {
-      card.addEventListener('click', () => {
-        card.classList.toggle('is-active')
-      })
-    })
-  }
-
   function init() {
     initScrollReveal()
     initTypingEffect()
@@ -163,7 +154,6 @@ const Animations = (() => {
     initRippleEffect()
     initAnimatedCounters()
     initCardTilt()
-    initFactCards()
   }
 
   return { init }

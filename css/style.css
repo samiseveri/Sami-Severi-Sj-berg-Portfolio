@@ -1490,8 +1490,7 @@ ol {
     background var(--duration);
 }
 
-.fact-card:hover,
-.fact-card.is-active {
+.fact-card:hover {
   transform: translateY(-6px) scale(1.02);
   border-color: var(--accent);
   box-shadow: var(--shadow-glow);
@@ -1504,7 +1503,7 @@ ol {
   transition: transform 0.3s var(--ease-spring);
 }
 
-.fact-card.is-active .fact-card__emoji {
+.fact-card:hover .fact-card__emoji {
   transform: scale(1.2) rotate(-6deg);
 }
 
@@ -1512,9 +1511,10 @@ ol {
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--text-muted);
+  transition: color var(--duration);
 }
 
-.fact-card.is-active .fact-card__text {
+.fact-card:hover .fact-card__text {
   color: var(--text);
 }
 
