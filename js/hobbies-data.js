@@ -33,7 +33,7 @@ export const HOBBIES = [
     id: 'hardware',
     title: 'Hardware & Tech',
     icon: '🖥️',
-    image: 'assets/images/hobbies/hardware.jpg',
+    image: 'assets/images/hobbies/Harvare.jpeg',
     summary: 'PC building, Raspberry Pi projects, homelabbing, and exploring new technologies.',
     overview:
       'My interest in technology started with hardware. Assembling PCs, updating BIOS firmware at Jimm\'s PC-Store, and later working with Raspberry Pi devices gave me a hands-on understanding of how systems work from the inside out. I also enjoy homelabbing — experimenting with servers, networking, and different technologies in my own home lab setup.',
@@ -83,10 +83,12 @@ export const HOBBIES = [
     id: 'nature',
     title: 'Nature',
     icon: '🌲',
-    image: 'assets/images/hobbies/nature.jpg',
-    summary: 'Exploring the Finnish outdoors and disconnecting from screens.',
+    image: 'assets/images/hobbies/nature1 (1).jpeg',
+    galleryManifest: 'assets/images/hobbies/nature-gallery.json',
+    imageFit: 'contain',
+    summary: 'Exploring the Finnish outdoors, collecting plants, and staying close to the sea.',
     overview:
-      'Spending time outdoors helps me reset and think more clearly. I have a strong love for the ocean and the sea, and I try to spend time near the water whenever possible. Being close to the sea is an important part of how I enjoy nature — I’ve been a sailor since I was younger, I always love being on the water, and I also stay active as a fisherman. One of my long-term dreams is to own a sailboat someday, and that feeling is what keeps me coming back to the coast.',
+      'Spending time outdoors helps me reset and think more clearly. I have a strong love for the ocean and the sea, and I try to spend time near the water whenever possible. Being close to the sea is an important part of how I enjoy nature — I’ve been a sailor since I was younger, I always love being on the water, and I also stay active as a fisherman. One of my long-term dreams is to own a sailboat someday, and that feeling is what keeps me coming back to the coast. I\u2019m also a passionate plant collector \u2014 I currently have over 130 plants in my collection, and it\u2019s become a hobby that brings a bit of nature indoors as well.',
     highlights: [
       'Enjoys exploring the Finnish outdoors',
       'Values time away from screens and digital noise',
@@ -94,6 +96,7 @@ export const HOBBIES = [
       'Sailor since I was younger — always enjoyed being on the water',
       'Active fisherman — enjoying time near the water',
       'Dreaming of owning a sailboat someday',
+      'Passionate plant collector with over 130 plants',
       'Uses nature as a way to recharge and reflect',
       'Balances technical work with outdoor downtime',
     ],
@@ -117,6 +120,23 @@ export const HOBBIES = [
       'Continues to be actively involved with Amma today',
       'Participates in Amma tours and events around the world',
       'A long-term commitment that remains meaningful beyond one-time volunteering',
+    ],
+  },
+  {
+    id: 'fencing',
+    title: 'Saber Fencing',
+    icon: '🤺',
+    image: 'assets/images/hobbies/miekkailu1 (1).jpeg',
+    galleryManifest: 'assets/images/hobbies/fencing-gallery.json',
+    imageFit: 'contain',
+    summary: 'Active saber fencer since 2017 — discipline, speed, and competitive spirit.',
+    overview:
+      'I have been fencing since 2017 and am still very active in the sport. Saber fencing is a fast-paced discipline that demands quick reflexes, strategic thinking, and physical fitness — qualities that carry over into many other areas of life. Training and competing regularly keeps me sharp, disciplined, and motivated, and the fencing community has become an important part of my life outside of work and studies.',
+    highlights: [
+      'Active saber fencer since 2017',
+      'Trains and competes regularly',
+      'Values the discipline, speed, and strategy the sport demands',
+      'Part of the fencing community',
     ],
   },
 ]

@@ -92,8 +92,9 @@ function renderHobbyCTA(cta) {
 }
 
 function renderCarousel(hobby, images) {
+  const fitClass = hobby.imageFit === 'contain' ? ' hobby-carousel--contain' : ''
   return `
-    <div class="hobby-carousel" data-carousel tabindex="0" aria-roledescription="carousel" aria-label="${hobby.title} gallery">
+    <div class="hobby-carousel${fitClass}" data-carousel tabindex="0" aria-roledescription="carousel" aria-label="${hobby.title} gallery">
       <div class="hobby-carousel__viewport">
         <div class="hobby-carousel__track">
           ${images
@@ -202,11 +203,32 @@ function initCarousel(carousel) {
   const nextBtn = carousel.querySelector('.hobby-carousel__nav--next')
   const status = carousel.querySelector('.hobby-carousel__status')
   const viewport = carousel.querySelector('.hobby-carousel__viewport')
+  const isContainVariant = carousel.classList.contains('hobby-carousel--contain')
 
   if (slides.length < 2) return
 
   let index = 0
   let isAnimating = false
+
+  const setViewportAspectRatioFromSlideImage = (slide) => {
+    if (!isContainVariant || !viewport) return
+
+    const img = slide?.querySelector('img')
+    if (!img) return
+
+    const apply = () => {
+      const { naturalWidth: w, naturalHeight: h } = img
+      if (w > 0 && h > 0) {
+        viewport.style.aspectRatio = `${w} / ${h}`
+      }
+    }
+
+    if (img.complete && img.naturalWidth > 0) apply()
+    else img.addEventListener('load', apply, { once: true })
+  }
+
+  // Ensure the first (eager) slide uses its real aspect ratio.
+  setViewportAspectRatioFromSlideImage(slides[0])
 
   const updateSlide = (nextIndex) => {
     if (isAnimating || nextIndex === index) return
@@ -218,6 +240,8 @@ function initCarousel(carousel) {
     index = nextIndex
     slides[index].classList.add('is-active')
     slides[index].setAttribute('aria-hidden', 'false')
+
+    setViewportAspectRatioFromSlideImage(slides[index])
 
     if (status) {
       status.textContent = `Showing slide ${index + 1} of ${slides.length}`

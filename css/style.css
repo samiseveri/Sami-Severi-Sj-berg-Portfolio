@@ -2276,6 +2276,10 @@ ol {
   display: block;
 }
 
+.hobby-carousel--contain .hobby-carousel__slide img {
+  object-fit: contain;
+}
+
 .hobby-carousel__nav {
   position: absolute;
   top: 50%;
