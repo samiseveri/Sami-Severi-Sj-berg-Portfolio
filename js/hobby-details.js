@@ -68,6 +68,29 @@ function renderHobbyLinks(links) {
   `
 }
 
+function renderHobbyCTA(cta) {
+  if (!cta?.href || !cta?.label) return ''
+
+  return `
+    <a
+      href="${cta.href}"
+      class="hobby-detail__link hobby-detail__link--amma hobby-detail__cta"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="${cta.label} (opens in a new tab)"
+    >
+      <span class="hobby-detail__link-icon" aria-hidden="true">
+        <svg class="hobby-detail__amma-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 3h6v6" />
+          <path d="M10 14L21 3" />
+          <path d="M21 14v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h7" />
+        </svg>
+      </span>
+      <span class="hobby-detail__link-label">${cta.label}</span>
+    </a>
+  `
+}
+
 function renderCarousel(hobby, images) {
   return `
     <div class="hobby-carousel" data-carousel tabindex="0" aria-roledescription="carousel" aria-label="${hobby.title} gallery">
@@ -109,15 +132,14 @@ function renderCarousel(hobby, images) {
 
 function renderSinglePhoto(hobby, imageSrc) {
   const imageAlt = `${hobby.title} — photo`
+  const frameClass = hobby.imageFit === 'contain' ? ' hobby-detail__photo-frame--fit' : ''
 
   return `
-    <div class="hobby-detail__photo-frame is-empty">
+    <div class="hobby-detail__photo-frame${frameClass}">
       <img
         class="hobby-detail__photo"
         src="${imageSrc}"
         alt="${imageAlt}"
-        width="480"
-        height="600"
         loading="lazy"
       />
       <div class="hobby-detail__photo-fallback" aria-hidden="true">
@@ -270,6 +292,7 @@ const HobbyDetails = (() => {
           <div class="hobby-detail__icon" aria-hidden="true">${hobby.icon}</div>
           <h1 class="hobby-detail__title">${hobby.title}</h1>
           <p class="hobby-detail__overview">${hobby.overview}</p>
+          ${renderHobbyCTA(hobby.cta)}
           ${renderHobbyLinks(hobby.links)}
           <div class="hobby-detail__features glass">
             <h2>Highlights</h2>

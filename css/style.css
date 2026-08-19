@@ -2078,6 +2078,16 @@ ol {
   margin-bottom: 1.5rem;
 }
 
+.hobby-detail__cta {
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+}
+
+.hobby-detail__link--amma .hobby-detail__amma-logo {
+  width: 22px;
+  height: 22px;
+}
+
 .hobby-detail__links {
   display: flex;
   flex-wrap: wrap;
@@ -2148,6 +2158,23 @@ ol {
 }
 
 .hobby-detail__link--steam:hover .hobby-detail__link-label {
+  color: var(--accent-light);
+}
+
+.hobby-detail__link--amma .hobby-detail__link-icon {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  overflow: hidden;
+  padding: 0;
+}
+
+.hobby-detail__link--amma:hover {
+  border-color: rgba(99, 102, 241, 0.45);
+  background: rgba(99, 102, 241, 0.08);
+}
+
+.hobby-detail__link--amma:hover .hobby-detail__link-label {
   color: var(--accent-light);
 }
 
@@ -2323,6 +2350,15 @@ ol {
   object-fit: cover;
   object-position: center;
   display: block;
+}
+
+.hobby-detail__photo-frame--fit {
+  aspect-ratio: auto;
+}
+
+.hobby-detail__photo-frame--fit .hobby-detail__photo {
+  height: auto;
+  object-fit: contain;
 }
 
 .hobby-detail__photo-fallback {
