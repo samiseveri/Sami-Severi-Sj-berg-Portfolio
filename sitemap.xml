@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  Replace SITE_ORIGIN with your deployed origin (no trailing slash), e.g. https://example.com
-  Keep this file in sync with the HTML pages in the repository root.
--->
+<!-- Keep this file in sync with the HTML pages in the repository root. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>SITE_ORIGIN/</loc></url>
-  <url><loc>SITE_ORIGIN/index.html</loc></url>
-  <url><loc>SITE_ORIGIN/about.html</loc></url>
-  <url><loc>SITE_ORIGIN/experience.html</loc></url>
-  <url><loc>SITE_ORIGIN/projects.html</loc></url>
-  <url><loc>SITE_ORIGIN/skills.html</loc></url>
-  <url><loc>SITE_ORIGIN/education.html</loc></url>
-  <url><loc>SITE_ORIGIN/hobbies.html</loc></url>
-  <url><loc>SITE_ORIGIN/contact.html</loc></url>
+  <url><loc>https://sami-severi.fi/</loc></url>
+  <url><loc>https://sami-severi.fi/index.html</loc></url>
+  <url><loc>https://sami-severi.fi/about.html</loc></url>
+  <url><loc>https://sami-severi.fi/experience.html</loc></url>
+  <url><loc>https://sami-severi.fi/projects.html</loc></url>
+  <url><loc>https://sami-severi.fi/skills.html</loc></url>
+  <url><loc>https://sami-severi.fi/education.html</loc></url>
+  <url><loc>https://sami-severi.fi/hobbies.html</loc></url>
+  <url><loc>https://sami-severi.fi/contact.html</loc></url>
 </urlset>

@@ -20,7 +20,7 @@ export const SITE = {
   cvPath: 'assets/documents/CV_Sami-Severi Sjöberg (EN).pdf',
   cvDownloadName: 'CV_Sami-Severi Sjöberg (EN).pdf',
   /** Public site origin after deploy (no trailing slash). Leave empty until confirmed. */
-  siteUrl: '',
+  siteUrl: 'https://sami-severi.fi',
   repositoryUrl: 'https://github.com/samiseveri/Sami-Severi-Sj-berg-Portfolio',
   tagline:
     'ICT Engineering student specializing in software engineering and project management — building full-stack products with craft and purpose.',
