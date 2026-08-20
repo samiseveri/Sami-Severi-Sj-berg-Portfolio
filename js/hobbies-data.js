@@ -36,7 +36,7 @@ export const HOBBIES = [
     image: 'assets/images/hobbies/Harvare.jpeg',
     summary: 'PC building, Raspberry Pi projects, homelabbing, and exploring new technologies.',
     overview:
-      'My interest in technology started with hardware. Assembling PCs, updating BIOS firmware at Jimm\'s PC-Store, and later working with Raspberry Pi devices gave me a hands-on understanding of how systems work from the inside out. I also enjoy homelabbing — experimenting with servers, networking, and different technologies in my own home lab setup.',
+      "My interest in technology started with hardware. Assembling PCs, updating BIOS firmware at Jimm's PC-Store, and later working with Raspberry Pi devices gave me a hands-on understanding of how systems work from the inside out. I also enjoy homelabbing — experimenting with servers, networking, and different technologies in my own home lab setup.",
     highlights: [
       'Assembled and maintained computers in a professional retail setting',
       'Hands-on experience with Raspberry Pi and embedded platforms',
@@ -50,7 +50,8 @@ export const HOBBIES = [
     title: 'AI & Innovation',
     icon: '🤖',
     image: 'assets/images/hobbies/ai.jpg',
-    summary: 'Prompt engineering, vibe coding, and AI-assisted development as part of my everyday workflow.',
+    summary:
+      'Prompt engineering, vibe coding, and AI-assisted development as part of my everyday workflow.',
     overview:
       'AI has become an integral part of how I develop software and solve problems. I have delved into prompt engineering and vibe coding — using AI as a hands-on development and productivity tool while staying in control of the architecture, logic, and technical decisions myself. From generating and improving code to debugging, reviewing, and researching unfamiliar technologies, AI helps me work faster and more deliberately. I also rely on it for grammar and writing assistance when refining documentation and communication, and for brainstorming ideas during early project stages. Beyond day-to-day use, I actively explore and experiment with new AI tools and technologies to stay ahead of what is possible.',
     highlights: [

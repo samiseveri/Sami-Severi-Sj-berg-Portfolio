@@ -34,9 +34,7 @@ async function loadGalleryImages(hobby) {
       const data = await response.json()
       const folder = (data.folder || 'assets/images/hobbies').replace(/\/$/, '')
 
-      return (data.images || []).map((name) =>
-        encodeImagePath(`${folder}/${name}`),
-      )
+      return (data.images || []).map((name) => encodeImagePath(`${folder}/${name}`))
     } catch {
       /* fall back to single image */
     }
