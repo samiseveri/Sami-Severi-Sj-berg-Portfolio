@@ -133,25 +133,19 @@ const Animations = (() => {
 
   /** Subtle 3D tilt on value cards */
   function initCardTilt() {
+    const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches
+    if (!canHover) return
+
     document.querySelectorAll('[data-tilt]').forEach((card) => {
       card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect()
         const x = (e.clientX - rect.left) / rect.width - 0.5
         const y = (e.clientY - rect.top) / rect.height - 0.5
-        card.style.transform = `perspective(600px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg) translateY(-4px)`
+        card.style.transform = `perspective(700px) rotateY(${x * 7}deg) rotateX(${-y * 7}deg) translateY(-10px) scale(1.03)`
       })
 
       card.addEventListener('mouseleave', () => {
         card.style.transform = ''
-      })
-    })
-  }
-
-  /** Fun fact card pop interaction */
-  function initFactCards() {
-    document.querySelectorAll('[data-fact]').forEach((card) => {
-      card.addEventListener('click', () => {
-        card.classList.toggle('is-active')
       })
     })
   }
@@ -163,7 +157,6 @@ const Animations = (() => {
     initRippleEffect()
     initAnimatedCounters()
     initCardTilt()
-    initFactCards()
   }
 
   return { init }

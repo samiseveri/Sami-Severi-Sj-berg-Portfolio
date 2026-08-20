@@ -94,12 +94,21 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .about-values__grid {
-    grid-template-columns: 1fr 1fr;
+  .footer__nav-group {
+    grid-column: 1 / -1;
+    justify-self: stretch;
+  }
+
+  .home-nav-grid {
+    grid-template-columns: 1fr;
   }
 
   .about-facts__grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-info__list {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -124,6 +133,14 @@
     font-size: clamp(2rem, 9vw, 2.75rem);
   }
 
+  .hero__badge {
+    font-size: 0.75rem;
+    line-height: 1.45;
+    max-width: 100%;
+    margin-inline: auto;
+    text-align: left;
+  }
+
   .hero__actions {
     flex-direction: column;
     width: 100%;
@@ -135,7 +152,71 @@
 
   .footer__inner {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.75rem;
+  }
+
+  .footer__nav-group {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .home-nav-card {
+    padding: 1.35rem;
+    gap: 1rem;
+  }
+
+  .home-nav-card__arrow {
+    display: none;
+  }
+
+  .recommendation__header {
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .recommendation__doc-title {
+    padding-top: 0;
+  }
+
+  .reference-card__top {
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .project-row__link {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding-block: 1.15rem;
+  }
+
+  .project-row__cta {
+    align-self: flex-end;
+  }
+
+  .hobby-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .hobby-detail__media {
+    position: static;
+    order: -1;
+    max-width: 360px;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  .hobby-carousel__nav {
+    width: 38px;
+    height: 38px;
+  }
+
+  .hobby-carousel__nav--prev {
+    left: 0.65rem;
+  }
+
+  .hobby-carousel__nav--next {
+    right: 0.65rem;
   }
 
   .footer__bottom {
@@ -160,27 +241,11 @@
     justify-content: center;
   }
 
-  .about-story__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about-values__grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .about-mission__grid {
-    grid-template-columns: 1fr;
-  }
-
   .about-facts__grid {
     grid-template-columns: 1fr 1fr;
   }
 
   /* Experience page */
-  .exp-summary__grid {
-    grid-template-columns: 1fr;
-  }
-
   .exp-card__top {
     flex-direction: column;
   }
@@ -199,8 +264,12 @@
     padding: 1.25rem;
   }
 
-  .contact-grid {
+  .contact-info__list {
     grid-template-columns: 1fr;
+  }
+
+  .contact-card__actions {
+    flex-direction: column;
   }
 }
 @media (min-width: 1400px) {

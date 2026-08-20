@@ -3,10 +3,11 @@
  */
 import Navigation from './navigation.js'
 import Animations from './animations.js'
-import ContactForm from './contact.js'
 import Experience from './experience.js'
 import Projects from './projects.js'
 import ProjectDetails from './project-details.js'
+import Hobbies from './hobbies.js'
+import HobbyDetails from './hobby-details.js'
 import Skills from './skills.js'
 import SocialLinks from './social-links.js'
 
@@ -77,6 +78,25 @@ const Main = (() => {
     images.forEach((img) => observer.observe(img))
   }
 
+  /** Expand / collapse recommendation letter */
+  function initRecommendation() {
+    document.querySelectorAll('[data-recommendation]').forEach((card) => {
+      const btn = card.querySelector('[data-recommendation-toggle]')
+      if (!btn) return
+
+      btn.addEventListener('click', () => {
+        const expanded = card.classList.toggle('is-expanded')
+        const panel = card.querySelector('.recommendation__expandable')
+        btn.setAttribute('aria-expanded', String(expanded))
+        btn.textContent = expanded ? 'Show Less' : 'Read More'
+        if (panel) panel.setAttribute('aria-hidden', String(!expanded))
+      })
+
+      const panel = card.querySelector('.recommendation__expandable')
+      if (panel) panel.setAttribute('aria-hidden', 'true')
+    })
+  }
+
   function init() {
     initLoader()
     initScrollProgress()
@@ -84,12 +104,14 @@ const Main = (() => {
     initLazyLoad()
     Navigation.init()
     SocialLinks.init()
-    Animations.init()
-    ContactForm.init()
     Experience.init()
     Projects.init()
     ProjectDetails.init()
+    Hobbies.init()
+    HobbyDetails.init()
     Skills.init()
+    Animations.init()
+    initRecommendation()
   }
 
   if (document.readyState === 'loading') {
