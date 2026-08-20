@@ -35,6 +35,63 @@ function initContactDetails() {
   setHref('[data-site-instagram]', SITE.instagram)
 }
 
+async function copyText(text) {
+  if (navigator.clipboard?.writeText) {
+    await navigator.clipboard.writeText(text)
+    return
+  }
+
+  const input = document.createElement('textarea')
+  input.value = text
+  input.setAttribute('readonly', '')
+  input.style.position = 'fixed'
+  input.style.opacity = '0'
+  document.body.appendChild(input)
+  input.select()
+  const ok = document.execCommand('copy')
+  input.remove()
+  if (!ok) throw new Error('Copy command failed')
+}
+
+function initEmailCopy() {
+  document.querySelectorAll('[data-copy-email]').forEach((btn) => {
+    let hideTimer = 0
+    const feedback = btn
+      .closest('.contact-info__meta')
+      ?.querySelector('.contact-info__copied')
+
+    const hideFeedback = () => {
+      if (!feedback) return
+      feedback.classList.remove('is-visible')
+      window.setTimeout(() => {
+        if (!feedback.classList.contains('is-visible')) {
+          feedback.textContent = ''
+        }
+      }, 220)
+    }
+
+    const showFeedback = () => {
+      if (!feedback) return
+      feedback.textContent = 'Copied!'
+      feedback.classList.add('is-visible')
+      window.clearTimeout(hideTimer)
+      hideTimer = window.setTimeout(hideFeedback, 1600)
+    }
+
+    btn.addEventListener('click', async () => {
+      const email = (btn.textContent || SITE.email).trim()
+      if (!email) return
+
+      try {
+        await copyText(email)
+        showFeedback()
+      } catch {
+        /* Keep silent on failure — no Copied! without a successful copy */
+      }
+    })
+  })
+}
+
 function initCvLinks() {
   const encoded = encodeAssetPath(SITE.cvPath)
   document.querySelectorAll('[data-site-cv]').forEach((el) => {
@@ -63,6 +120,7 @@ function initFooterYear() {
 
 function init() {
   initContactDetails()
+  initEmailCopy()
   initCvLinks()
   initProfileImages()
   initFooterYear()
