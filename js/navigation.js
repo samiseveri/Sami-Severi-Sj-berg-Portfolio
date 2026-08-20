@@ -88,6 +88,8 @@ const Navigation = (() => {
 
   /** Smooth scroll for same-page anchors */
   function bindSmoothScroll() {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
     document.addEventListener('click', (e) => {
       const anchor = e.target.closest('a[href^="#"]')
       if (!anchor) return
@@ -96,7 +98,7 @@ const Navigation = (() => {
       const target = document.querySelector(id)
       if (!target) return
       e.preventDefault()
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' })
     })
   }
 
@@ -104,6 +106,14 @@ const Navigation = (() => {
     navbar = document.querySelector('.navbar')
     toggle = document.querySelector('.navbar__toggle')
     drawer = document.querySelector('.navbar__drawer')
+
+    if (toggle && drawer) {
+      if (!drawer.id) drawer.id = 'mobile-nav'
+      toggle.setAttribute('aria-controls', drawer.id)
+      if (!toggle.hasAttribute('aria-expanded')) {
+        toggle.setAttribute('aria-expanded', 'false')
+      }
+    }
 
     renderLinks()
     initTheme()
