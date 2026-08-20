@@ -1895,6 +1895,13 @@ ol {
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 1.5rem;
+  align-items: center;
+}
+
+.project-detail__unavailable {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
 }
 
 .project-detail__features {
@@ -2850,6 +2857,178 @@ ol {
   font-size: 2.5rem;
 }
 
+.hobby-tools {
+  padding: 1.35rem 1.25rem 1.25rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow), var(--shadow-glow);
+}
+
+.hobby-tools__header {
+  margin-bottom: 1.1rem;
+}
+
+.hobby-tools__eyebrow {
+  margin: 0 0 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+}
+
+.hobby-tools__title {
+  margin: 0 0 0.45rem;
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+
+.hobby-tools__lead {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.hobby-tools__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.hobby-tools__item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.85rem;
+  align-items: start;
+  padding: 0.85rem 0.9rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  transition:
+    border-color var(--duration),
+    background var(--duration),
+    transform var(--duration) var(--ease-out);
+}
+
+[data-theme='light'] .hobby-tools__item {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hobby-tools__item:hover {
+    border-color: rgba(99, 102, 241, 0.4);
+    background: rgba(99, 102, 241, 0.08);
+    transform: translateY(-1px);
+  }
+}
+
+.hobby-tools__icon {
+  width: 2.35rem;
+  height: 2.35rem;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: var(--accent-light);
+}
+
+.hobby-tools__icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hobby-tools__item--cursor .hobby-tools__icon {
+  color: #67e8f9;
+}
+
+.hobby-tools__item--claude .hobby-tools__icon {
+  color: #fdba74;
+}
+
+.hobby-tools__item--copilot .hobby-tools__icon {
+  color: #a5b4fc;
+}
+
+.hobby-tools__item--chatgpt .hobby-tools__icon {
+  color: #86efac;
+}
+
+.hobby-tools__body {
+  min-width: 0;
+  display: grid;
+  gap: 0.28rem;
+}
+
+.hobby-tools__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.65rem;
+}
+
+.hobby-tools__name {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.hobby-tools__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(34, 211, 238, 0.45);
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.22), rgba(99, 102, 241, 0.2));
+  color: #67e8f9;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  box-shadow: 0 0 16px -6px rgba(34, 211, 238, 0.55);
+}
+
+[data-theme='light'] .hobby-tools__badge {
+  color: #0e7490;
+  border-color: rgba(8, 145, 178, 0.4);
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.18), rgba(99, 102, 241, 0.12));
+}
+
+.hobby-tools__item--cursor {
+  border-color: rgba(34, 211, 238, 0.28);
+}
+
+.hobby-tools__category {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  background: rgba(99, 102, 241, 0.12);
+  color: var(--accent-light);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hobby-tools__item--chatgpt .hobby-tools__category {
+  border-color: rgba(34, 197, 94, 0.35);
+  background: rgba(34, 197, 94, 0.12);
+  color: #86efac;
+}
+
+[data-theme='light'] .hobby-tools__item--chatgpt .hobby-tools__category {
+  color: #15803d;
+}
+
+.hobby-tools__desc {
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
 .hobby-carousel {
   position: relative;
 }
@@ -3111,19 +3290,82 @@ ol {
 }
 
 .contact-info__meta a,
-.contact-info__meta span {
+.contact-info__meta > span:not(.contact-info__copy) {
   color: var(--text);
   font-size: 0.95rem;
   transition: color var(--duration);
 }
 
-.contact-info__meta a[href^='mailto:'],
 .contact-info__meta a[href^='tel:'] {
   white-space: nowrap;
 }
 
 .contact-info__meta a:hover {
   color: var(--accent-light);
+}
+
+.contact-info__label-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.contact-info__copied {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  opacity: 0;
+  transform: translateX(-4px);
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease,
+    max-width 0.22s ease;
+  pointer-events: none;
+}
+
+.contact-info__copied.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+  max-width: 6rem;
+}
+
+.contact-info__copy-btn {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  text-align: left;
+  color: var(--text);
+  cursor: pointer;
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.18em;
+  transition:
+    color var(--duration),
+    text-decoration-color var(--duration);
+}
+
+.contact-info__copy-btn:hover,
+.contact-info__copy-btn:focus-visible {
+  color: var(--accent-light);
+  text-decoration-color: currentColor;
+}
+
+.contact-info__copy-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 .contact-card__actions {

@@ -15,7 +15,7 @@ const SOCIAL_LINKS = [
   { key: 'instagram', label: 'Instagram', href: SITE.instagram },
 ]
 
-function linkHTML({ key, label, href }, { size, linkClass }) {
+function linkHTML({ key, label, href }, { linkClass }) {
   const classes = ['social-link', `social-link--${key}`, linkClass].filter(Boolean).join(' ')
   return `<a href="${href}" class="${classes}" target="_blank" rel="noopener noreferrer" aria-label="${label}">${ICONS[key]}</a>`
 }
@@ -25,9 +25,7 @@ function init() {
     const size = container.dataset.iconSize || '18'
     const linkClass = container.dataset.linkClass || ''
     container.style.setProperty('--social-icon-size', `${size}px`)
-    container.innerHTML = SOCIAL_LINKS.map((item) =>
-      linkHTML(item, { size, linkClass }),
-    ).join('')
+    container.innerHTML = SOCIAL_LINKS.map((item) => linkHTML(item, { linkClass })).join('')
   })
 }
 

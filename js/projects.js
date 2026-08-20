@@ -1,5 +1,5 @@
 /**
- * Projects page — category filtering
+ * Projects page — accessible category filtering (filter buttons, not tabs)
  */
 import { PROJECTS } from './projects-data.js'
 
@@ -24,7 +24,6 @@ const Projects = (() => {
       )
       .join('')
 
-    // Re-observe new reveal elements
     container.querySelectorAll('.reveal').forEach((el) => {
       const observer = new IntersectionObserver(
         (entries) => {
@@ -41,20 +40,35 @@ const Projects = (() => {
     })
   }
 
+  function setActiveFilter(filters, activeBtn) {
+    filters.forEach((btn) => {
+      const isActive = btn === activeBtn
+      btn.classList.toggle('is-active', isActive)
+      btn.setAttribute('aria-pressed', String(isActive))
+    })
+  }
+
   function init() {
     const grid = document.querySelector('#projects-grid')
-    const filters = document.querySelectorAll('[data-filter]')
+    const filters = [...document.querySelectorAll('[data-filter]')]
     if (!grid) return
 
     renderGrid(grid, PROJECTS)
+    setActiveFilter(filters, filters.find((btn) => btn.dataset.filter === 'all') || filters[0])
 
     filters.forEach((btn) => {
       btn.addEventListener('click', () => {
         const cat = btn.dataset.filter
-        filters.forEach((b) => b.classList.toggle('is-active', b === btn))
+        setActiveFilter(filters, btn)
 
         const filtered = cat === 'all' ? PROJECTS : PROJECTS.filter((p) => p.category === cat)
         renderGrid(grid, filtered)
+
+        grid.setAttribute('aria-busy', 'false')
+        const live = document.querySelector('#projects-filter-status')
+        if (live) {
+          live.textContent = `Showing ${filtered.length} project${filtered.length === 1 ? '' : 's'}`
+        }
       })
     })
   }

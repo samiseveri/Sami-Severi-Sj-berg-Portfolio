@@ -3,6 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Sami-Severi Sjöberg" />
+  <meta property="og:title" content="Sami-Severi Sjöberg — Portfolio" />
+  <meta property="og:description" content="ICT Engineering student and full-stack developer portfolio." />
+  <meta property="og:image" content="assets/images/profile.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Sami-Severi Sjöberg — Portfolio" />
+  <meta name="twitter:description" content="ICT Engineering student and full-stack developer portfolio." />
+  <meta name="twitter:image" content="assets/images/profile.jpg" />
+
   <meta name="description" content="Sami-Severi Sjöberg — Frontend Engineer, UI/UX Designer, and Creative Developer. Premium personal portfolio." />
   <meta name="author" content="Sami-Severi Sjöberg" />
   <meta name="theme-color" content="#09090b" />
@@ -23,7 +34,7 @@
   <a href="#main" class="skip-link">Skip to main content</a>
 
   <!-- Scroll progress -->
-  <div class="scroll-progress" role="progressbar" aria-label="Page scroll progress" aria-valuemin="0" aria-valuemax="100"></div>
+  <div class="scroll-progress" role="progressbar" aria-label="Page scroll progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
 
   <!-- Page loader -->
   <div class="loader" aria-hidden="true">
@@ -109,7 +120,7 @@
               <a href="contact.html" class="btn btn--ghost" data-magnetic data-ripple>Get In Touch</a>
             </span>
             <span class="magnetic-wrap">
-              <a href="assets/documents/CV_Sami-Severi%20Sj%C3%B6berg%20(EN).pdf" class="btn btn--ghost" data-magnetic data-ripple download="CV_Sami-Severi Sjöberg (EN).pdf">Download Resume</a>
+              <a href="assets/documents/CV_Sami-Severi%20Sj%C3%B6berg%20(EN).pdf" class="btn btn--ghost" data-magnetic data-ripple data-site-cv download="CV_Sami-Severi Sjöberg (EN).pdf">Download Resume</a>
             </span>
           </div>
 
@@ -121,6 +132,7 @@
             <img
               class="hero__photo-img"
               src="assets/images/profile.jpg"
+              data-site-profile-image
               alt="Sami-Severi Sjöberg — professional photo"
               width="380"
               height="475"
@@ -396,7 +408,7 @@
       </div>
 
       <div class="footer__bottom">
-        <p>&copy; <span id="year"></span> Sami-Severi Sjöberg. All rights reserved.</p>
+        <p>&copy; <span class="year" id="year"></span> Sami-Severi Sjöberg. All rights reserved.</p>
         <p class="footer__built">Built with HTML, CSS &amp; JavaScript</p>
       </div>
     </div>
@@ -408,6 +420,5 @@
   </button>
 
   <script type="module" src="js/main.js"></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
 </body>
 </html>

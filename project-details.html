@@ -3,6 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Sami-Severi Sjöberg" />
+  <meta property="og:title" content="Sami-Severi Sjöberg — Portfolio" />
+  <meta property="og:description" content="ICT Engineering student and full-stack developer portfolio." />
+  <meta property="og:image" content="assets/images/profile.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Sami-Severi Sjöberg — Portfolio" />
+  <meta name="twitter:description" content="ICT Engineering student and full-stack developer portfolio." />
+  <meta name="twitter:image" content="assets/images/profile.jpg" />
+
   <meta name="description" content="Project case study — Sami-Severi Sjöberg portfolio." />
   <title>Project — Sami-Severi Sjöberg</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,7 +25,7 @@
 </head>
 <body data-page="projects">
   <a href="#main" class="skip-link">Skip to main content</a>
-  <div class="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+  <div class="scroll-progress" role="progressbar" aria-label="Page scroll progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
   <div class="loader" aria-hidden="true"><div class="loader__logo">S</div><div class="loader__bar"><div class="loader__bar-fill"></div></div></div>
   <header class="navbar" role="banner">
     <div class="container navbar__inner">
@@ -25,10 +36,10 @@
           <svg class="theme-toggle__icon--dark" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
           <svg class="theme-toggle__icon--light" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
-        <button class="navbar__toggle" type="button" aria-label="Open menu" aria-expanded="false"><span class="navbar__toggle-bar"></span></button>
+        <button class="navbar__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav"><span class="navbar__toggle-bar"></span></button>
       </div>
     </div>
-    <nav class="navbar__drawer" aria-label="Mobile navigation"><div class="navbar__drawer-links"></div></nav>
+    <nav class="navbar__drawer" id="mobile-nav" aria-label="Mobile navigation"><div class="navbar__drawer-links"></div></nav>
   </header>
   <main id="main" class="section">
     <div class="container" id="project-detail"></div>
@@ -45,6 +56,5 @@
   </footer>
   <button class="back-to-top" type="button" aria-label="Back to top"><img src="assets/icons/arrow-up.svg" alt="" width="20" height="20" /></button>
   <script type="module" src="js/main.js"></script>
-  <script>document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear())</script>
 </body>
 </html>
