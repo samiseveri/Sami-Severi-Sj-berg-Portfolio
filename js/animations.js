@@ -4,15 +4,23 @@
 import { TYPING_PHRASES } from './site-data.js'
 
 const Animations = (() => {
-
   let typeIndex = 0
   let charIndex = 0
   let isDeleting = false
+
+  function prefersReducedMotion() {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  }
 
   /** Intersection Observer for scroll-triggered reveals */
   function initScrollReveal() {
     const elements = document.querySelectorAll('.reveal')
     if (!elements.length) return
+
+    if (prefersReducedMotion()) {
+      elements.forEach((el) => el.classList.add('is-visible'))
+      return
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -33,6 +41,11 @@ const Animations = (() => {
   function initTypingEffect() {
     const el = document.querySelector('[data-typing]')
     if (!el) return
+
+    if (prefersReducedMotion()) {
+      el.textContent = TYPING_PHRASES[0] || ''
+      return
+    }
 
     const speed = 80
     const pause = 2000
@@ -65,6 +78,8 @@ const Animations = (() => {
 
   /** Magnetic hover effect on buttons */
   function initMagneticButtons() {
+    if (prefersReducedMotion()) return
+
     document.querySelectorAll('[data-magnetic]').forEach((btn) => {
       btn.addEventListener('mousemove', (e) => {
         const rect = btn.getBoundingClientRect()
@@ -81,6 +96,8 @@ const Animations = (() => {
 
   /** Ripple effect on click */
   function initRippleEffect() {
+    if (prefersReducedMotion()) return
+
     document.querySelectorAll('[data-ripple]').forEach((btn) => {
       btn.addEventListener('click', (e) => {
         const rect = btn.getBoundingClientRect()
@@ -103,6 +120,12 @@ const Animations = (() => {
 
     const animate = (el) => {
       const target = parseInt(el.dataset.count, 10)
+
+      if (prefersReducedMotion()) {
+        el.textContent = target
+        return
+      }
+
       const duration = 1400
       const start = performance.now()
 
@@ -133,6 +156,8 @@ const Animations = (() => {
 
   /** Subtle 3D tilt on value cards */
   function initCardTilt() {
+    if (prefersReducedMotion()) return
+
     const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches
     if (!canHover) return
 

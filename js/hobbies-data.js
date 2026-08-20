@@ -36,7 +36,7 @@ export const HOBBIES = [
     image: 'assets/images/hobbies/Harvare.jpeg',
     summary: 'PC building, Raspberry Pi projects, homelabbing, and exploring new technologies.',
     overview:
-      'My interest in technology started with hardware. Assembling PCs, updating BIOS firmware at Jimm\'s PC-Store, and later working with Raspberry Pi devices gave me a hands-on understanding of how systems work from the inside out. I also enjoy homelabbing — experimenting with servers, networking, and different technologies in my own home lab setup.',
+      "My interest in technology started with hardware. Assembling PCs, updating BIOS firmware at Jimm's PC-Store, and later working with Raspberry Pi devices gave me a hands-on understanding of how systems work from the inside out. I also enjoy homelabbing — experimenting with servers, networking, and different technologies in my own home lab setup.",
     highlights: [
       'Assembled and maintained computers in a professional retail setting',
       'Hands-on experience with Raspberry Pi and embedded platforms',
@@ -49,16 +49,46 @@ export const HOBBIES = [
     id: 'ai',
     title: 'AI & Innovation',
     icon: '🤖',
-    image: 'assets/images/hobbies/ai.jpg',
-    summary: 'Prompt engineering, vibe coding, and AI-assisted development as part of my everyday workflow.',
+    summary:
+      'Prompt engineering, vibe coding, and AI-assisted development as part of my everyday workflow.',
     overview:
       'AI has become an integral part of how I develop software and solve problems. I have delved into prompt engineering and vibe coding — using AI as a hands-on development and productivity tool while staying in control of the architecture, logic, and technical decisions myself. From generating and improving code to debugging, reviewing, and researching unfamiliar technologies, AI helps me work faster and more deliberately. I also rely on it for grammar and writing assistance when refining documentation and communication, and for brainstorming ideas during early project stages. Beyond day-to-day use, I actively explore and experiment with new AI tools and technologies to stay ahead of what is possible.',
+    toolsPanel: {
+      title: 'AI Tools I Use',
+      tools: [
+        {
+          id: 'cursor',
+          name: 'Cursor',
+          category: 'Coding',
+          badge: 'Main',
+          description: 'My main coding tool for AI-assisted software development',
+        },
+        {
+          id: 'claude',
+          name: 'Claude',
+          category: 'Coding',
+          description: 'Coding, problem-solving, and development assistance',
+        },
+        {
+          id: 'copilot',
+          name: 'GitHub Copilot',
+          category: 'Coding',
+          description: 'Coding assistance and development',
+        },
+        {
+          id: 'chatgpt',
+          name: 'ChatGPT',
+          category: 'General',
+          description:
+            'General use, grammar and writing assistance, research, brainstorming, and exploring new topics',
+        },
+      ],
+    },
     highlights: [
       'Prompt engineering and vibe coding as part of everyday software development',
-      'AI-assisted coding — generating, improving, debugging, and reviewing code',
+      'Cursor, Claude, and GitHub Copilot for AI-assisted coding and development',
+      'ChatGPT for research, writing/grammar help, brainstorming, and general assistance',
       'Research and problem solving with AI to explore technologies and find solutions',
-      'Grammar and writing assistance for documentation and professional communication',
-      'Brainstorming and idea development during project planning',
       'Continuously exploring new AI tools, models, and workflows',
     ],
   },

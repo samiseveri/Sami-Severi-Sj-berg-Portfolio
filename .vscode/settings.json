@@ -1,6 +1,9 @@
 {
-  "liveServer.settings.port": 5500,
-  "liveServer.settings.root": "/",
-  "liveServer.settings.CustomBrowser": "default",
-  "liveServer.settings.donotShowInfoMsg": true
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.validate": ["javascript"],
+  "stylelint.validate": ["css"],
+  "files.exclude": {
+    "**/node_modules": true
+  }
 }

@@ -10,6 +10,7 @@ import Hobbies from './hobbies.js'
 import HobbyDetails from './hobby-details.js'
 import Skills from './skills.js'
 import SocialLinks from './social-links.js'
+import SiteContent from './site-content.js'
 
 const Main = (() => {
   /** Page loading screen */
@@ -27,22 +28,30 @@ const Main = (() => {
     const bar = document.querySelector('.scroll-progress')
     if (!bar) return
 
-    window.addEventListener(
-      'scroll',
-      () => {
-        const scrollTop = window.scrollY
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight
-        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0
-        bar.style.width = `${progress}%`
-      },
-      { passive: true },
-    )
+    bar.setAttribute('role', 'progressbar')
+    bar.setAttribute('aria-label', 'Page scroll progress')
+    bar.setAttribute('aria-valuemin', '0')
+    bar.setAttribute('aria-valuemax', '100')
+    bar.setAttribute('aria-valuenow', '0')
+
+    const update = () => {
+      const scrollTop = window.scrollY
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight
+      const progress = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0
+      bar.style.width = `${progress}%`
+      bar.setAttribute('aria-valuenow', String(Math.round(progress)))
+    }
+
+    window.addEventListener('scroll', update, { passive: true })
+    update()
   }
 
   /** Back-to-top button visibility */
   function initBackToTop() {
     const btn = document.querySelector('.back-to-top')
     if (!btn) return
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
     window.addEventListener(
       'scroll',
@@ -53,7 +62,7 @@ const Main = (() => {
     )
 
     btn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' })
     })
   }
 
@@ -99,6 +108,7 @@ const Main = (() => {
 
   function init() {
     initLoader()
+    SiteContent.init()
     initScrollProgress()
     initBackToTop()
     initLazyLoad()
