@@ -3347,7 +3347,7 @@ ol {
   text-align: left;
   color: var(--text);
   cursor: pointer;
-  word-break: break-word;
+  overflow-wrap: anywhere;
   text-decoration: underline;
   text-decoration-color: transparent;
   text-underline-offset: 0.18em;
