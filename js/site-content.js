@@ -56,9 +56,7 @@ async function copyText(text) {
 function initEmailCopy() {
   document.querySelectorAll('[data-copy-email]').forEach((btn) => {
     let hideTimer = 0
-    const feedback = btn
-      .closest('.contact-info__meta')
-      ?.querySelector('.contact-info__copied')
+    const feedback = btn.closest('.contact-info__meta')?.querySelector('.contact-info__copied')
 
     const hideFeedback = () => {
       if (!feedback) return
