@@ -1,9 +1,34 @@
 /**
  * Project details page — populate from URL ?id=
  */
-import { getProjectById } from './projects-data.js'
+import { getProjectById, hasProjectLink } from './projects-data.js'
 
 const ProjectDetails = (() => {
+  function renderActions(project) {
+    const actions = []
+
+    if (hasProjectLink(project.demo)) {
+      actions.push(
+        `<a href="${project.demo}" class="btn btn--primary" target="_blank" rel="noopener noreferrer" data-ripple>Live Demo</a>`,
+      )
+    }
+
+    if (hasProjectLink(project.github)) {
+      actions.push(
+        `<a href="${project.github}" class="btn btn--ghost" target="_blank" rel="noopener noreferrer" data-ripple>View on GitHub</a>`,
+      )
+    }
+
+    if (!hasProjectLink(project.demo) && !hasProjectLink(project.github)) {
+      actions.push(
+        `<p class="project-detail__unavailable" role="status">Demo and source links are not available for this project yet.</p>`,
+      )
+    }
+
+    actions.push(`<a href="projects.html" class="btn btn--ghost" data-ripple>← All Projects</a>`)
+    return actions.join('')
+  }
+
   function init() {
     const root = document.querySelector('#project-detail')
     if (!root) return
@@ -13,7 +38,8 @@ const ProjectDetails = (() => {
     const project = getProjectById(id)
 
     if (!project) {
-      root.innerHTML = '<p class="section__subtitle">Project not found. <a href="projects.html">Back to projects</a></p>'
+      root.innerHTML =
+        '<p class="section__subtitle">Project not found. <a href="projects.html">Back to projects</a></p>'
       return
     }
 
@@ -26,9 +52,7 @@ const ProjectDetails = (() => {
         <p class="project-detail__desc">${project.overview}</p>
         <ul class="project-detail__tags">${project.tags.map((t) => `<li>${t}</li>`).join('')}</ul>
         <div class="project-detail__actions">
-          <a href="${project.demo}" class="btn btn--primary" target="_blank" rel="noopener noreferrer" data-ripple>Live Demo</a>
-          <a href="${project.github}" class="btn btn--ghost" target="_blank" rel="noopener noreferrer" data-ripple>View on GitHub</a>
-          <a href="projects.html" class="btn btn--ghost" data-ripple>← All Projects</a>
+          ${renderActions(project)}
         </div>
       </div>
       <div class="project-detail__features glass reveal">
@@ -37,7 +61,6 @@ const ProjectDetails = (() => {
       </div>
     `
 
-    // Trigger reveal visibility for dynamically added elements
     root.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-visible'))
   }
 

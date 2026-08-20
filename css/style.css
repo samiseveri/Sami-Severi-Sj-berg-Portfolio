@@ -1895,6 +1895,13 @@ ol {
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 1.5rem;
+  align-items: center;
+}
+
+.project-detail__unavailable {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
 }
 
 .project-detail__features {
