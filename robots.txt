@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Update Sitemap absolute URL after deployment (set SITE.siteUrl in js/site-data.js).
+Sitemap: sitemap.xml
