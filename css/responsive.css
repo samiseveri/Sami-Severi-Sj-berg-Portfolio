@@ -150,6 +150,15 @@
     width: 100%;
   }
 
+  .skill-bar__header {
+    flex-wrap: wrap;
+    gap: 0.25rem 0.75rem;
+  }
+
+  .skill-bar__meta {
+    text-align: left;
+  }
+
   .footer__inner {
     grid-template-columns: 1fr;
     gap: 1.75rem;
