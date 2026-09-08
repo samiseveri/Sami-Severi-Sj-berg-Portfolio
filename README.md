@@ -80,17 +80,17 @@ scripts/check-links.mjs Local link checker
 
 ## Maintaining the site
 
-| What to change                                 | Where                                                         |
-| ---------------------------------------------- | ------------------------------------------------------------- |
-| Name, email, phone, socials, CV, profile image | `js/site-data.js`                                             |
-| Projects list / links                          | `js/projects-data.js`                                         |
-| Hobbies list / galleries                       | `js/hobbies-data.js` + `assets/images/hobbies/*-gallery.json` |
-| Work experience                                | `experience.html`                                             |
-| About bio & timeline                           | `about.html`                                                  |
+| What to change                                 | Where                                                           |
+| ---------------------------------------------- | --------------------------------------------------------------- |
+| Name, email, phone, socials, CV, profile image | `js/site-data.js`                                               |
+| Projects list / links                          | `js/projects-data.js`                                           |
+| Hobbies list / galleries                       | `js/hobbies-data.js` + `assets/images/hobbies/*-gallery.json`   |
+| Work experience                                | `experience.html`                                               |
+| About bio & timeline                           | `about.html`                                                    |
 | Skills, levels, years & project counts         | `skills.html` (`data-skill-bar="90"` = 90%; `.skill-bar__meta`) |
-| Education entries                              | `education.html`                                              |
-| Colors & fonts                                 | CSS variables in `css/style.css` (`:root`)                    |
-| Deployed site URL for sitemap/OG               | `js/site-data.js` (`siteUrl`) and `sitemap.xml`               |
+| Education entries                              | `education.html`                                                |
+| Colors & fonts                                 | CSS variables in `css/style.css` (`:root`)                      |
+| Deployed site URL for sitemap/OG               | `js/site-data.js` (`siteUrl`) and `sitemap.xml`                 |
 
 ### Add a new project
 
