@@ -87,7 +87,7 @@ scripts/check-links.mjs Local link checker
 | Hobbies list / galleries                       | `js/hobbies-data.js` + `assets/images/hobbies/*-gallery.json` |
 | Work experience                                | `experience.html`                                             |
 | About bio & timeline                           | `about.html`                                                  |
-| Skills & levels                                | `skills.html` (`data-skill-bar="90"` = 90%)                   |
+| Skills, levels, years & project counts         | `skills.html` (`data-skill-bar="90"` = 90%; `.skill-bar__meta`) |
 | Education entries                              | `education.html`                                              |
 | Colors & fonts                                 | CSS variables in `css/style.css` (`:root`)                    |
 | Deployed site URL for sitemap/OG               | `js/site-data.js` (`siteUrl`) and `sitemap.xml`               |

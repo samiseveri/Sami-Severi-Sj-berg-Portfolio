@@ -1963,12 +1963,27 @@ ol {
   margin-bottom: 0;
 }
 
-.skill-bar > span {
-  display: block;
+.skill-bar__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.4rem;
+}
+
+.skill-bar__name {
   font-size: 0.85rem;
   font-weight: 500;
-  margin-bottom: 0.4rem;
   color: var(--text-muted);
+}
+
+.skill-bar__meta {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  opacity: 0.85;
+  text-align: right;
 }
 
 .skill-bar__track {
