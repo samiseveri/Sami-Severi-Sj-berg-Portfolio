@@ -3045,6 +3045,42 @@ ol {
   color: #c084fc;
 }
 
+.hobby-tools__item--react .hobby-tools__icon {
+  color: #67e8f9;
+}
+
+.hobby-tools__item--node .hobby-tools__icon {
+  color: #86efac;
+}
+
+.hobby-tools__item--express .hobby-tools__icon {
+  color: #a3a3a3;
+}
+
+.hobby-tools__item--postgres .hobby-tools__icon {
+  color: #93c5fd;
+}
+
+.hobby-tools__item--redux .hobby-tools__icon {
+  color: #c4b5fd;
+}
+
+.hobby-tools__item--typescript .hobby-tools__icon {
+  color: #60a5fa;
+}
+
+.hobby-tools__item--vite .hobby-tools__icon {
+  color: #d8b4fe;
+}
+
+.hobby-tools__item--threejs .hobby-tools__icon {
+  color: #f9a8d4;
+}
+
+.hobby-tools__item--raspberrypi .hobby-tools__icon {
+  color: #fca5a5;
+}
+
 .hobby-tools__item--javascript {
   border-color: rgba(250, 204, 21, 0.28);
 }
