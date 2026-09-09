@@ -1967,36 +1967,6 @@ ol {
   color: var(--text-muted);
 }
 
-.project-detail__features {
-  padding: 1.5rem 1.75rem;
-}
-
-.project-detail__features h2 {
-  font-size: 1rem;
-  margin-bottom: 0.85rem;
-}
-
-.project-detail__features ul {
-  display: grid;
-  gap: 0.55rem;
-}
-
-.project-detail__features li {
-  position: relative;
-  padding-left: 1.15rem;
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-.project-detail__features li::before {
-  content: '+';
-  position: absolute;
-  left: 0;
-  color: var(--accent-2);
-  font-weight: 700;
-}
-
 .project-detail__media {
   position: sticky;
   top: calc(var(--nav-height) + 1.25rem);
