@@ -13,12 +13,37 @@ const LINK_ICONS = {
 const TECH_ICON_FONT =
   "ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif"
 
-/** Simple monogram icons — readable labels instead of decorative logos */
-const TECH_ICONS = {
-  html: `<svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor" opacity="0.14"/><text x="16" y="20.5" text-anchor="middle" font-family="${TECH_ICON_FONT}" font-size="8.5" font-weight="800" letter-spacing="0.04em" fill="currentColor">HTML</text></svg>`,
-  css: `<svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor" opacity="0.14"/><text x="16" y="20.5" text-anchor="middle" font-family="${TECH_ICON_FONT}" font-size="10" font-weight="800" letter-spacing="0.06em" fill="currentColor">CSS</text></svg>`,
-  javascript: `<svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor" opacity="0.14"/><text x="16" y="21" text-anchor="middle" font-family="${TECH_ICON_FONT}" font-size="12" font-weight="800" letter-spacing="0.02em" fill="currentColor">JS</text></svg>`,
-  svg: `<svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor" opacity="0.14"/><text x="16" y="20.5" text-anchor="middle" font-family="${TECH_ICON_FONT}" font-size="10" font-weight="800" letter-spacing="0.06em" fill="currentColor">SVG</text></svg>`,
+/** Preferred short labels for stack monograms */
+const TECH_LABELS = {
+  html: 'HTML',
+  css: 'CSS',
+  javascript: 'JS',
+  svg: 'SVG',
+  react: 'REACT',
+  node: 'NODE',
+  express: 'EXP',
+  postgres: 'PG',
+  redux: 'REDX',
+  typescript: 'TS',
+  vite: 'VITE',
+  threejs: '3JS',
+  raspberrypi: 'RPI',
+  tailwind: 'TW',
+}
+
+function monogramIcon(label) {
+  const text = String(label || '?')
+    .replace(/[^a-zA-Z0-9+#.]/g, '')
+    .slice(0, 4)
+    .toUpperCase()
+  const size = text.length >= 4 ? 8 : text.length === 3 ? 9.5 : 12
+
+  return `<svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor" opacity="0.14"/><text x="16" y="20.8" text-anchor="middle" font-family="${TECH_ICON_FONT}" font-size="${size}" font-weight="800" letter-spacing="0.04em" fill="currentColor">${text}</text></svg>`
+}
+
+function getTechIcon(tool) {
+  const label = TECH_LABELS[tool.id] || tool.iconLabel || tool.name
+  return monogramIcon(label)
 }
 
 function collectProjectLinks(project) {
@@ -84,7 +109,7 @@ function renderTechnologiesPanel(project) {
           .map(
             (tool) => `
           <li class="hobby-tools__item hobby-tools__item--${tool.id}">
-            <span class="hobby-tools__icon" aria-hidden="true">${TECH_ICONS[tool.id] || ''}</span>
+            <span class="hobby-tools__icon" aria-hidden="true">${getTechIcon(tool)}</span>
             <span class="hobby-tools__body">
               <span class="hobby-tools__meta">
                 <span class="hobby-tools__name">${tool.name}</span>
