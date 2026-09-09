@@ -101,17 +101,6 @@ function renderTechnologiesPanel(project) {
   `
 }
 
-function renderFeatures(project) {
-  if (!project.features?.length) return ''
-
-  return `
-    <div class="project-detail__features glass">
-      <h2>Highlights</h2>
-      <ul>${project.features.map((item) => `<li>${item}</li>`).join('')}</ul>
-    </div>
-  `
-}
-
 const ProjectDetails = (() => {
   function init() {
     const root = document.querySelector('#project-detail')
@@ -141,7 +130,6 @@ const ProjectDetails = (() => {
           <h1 class="project-detail__title">${project.title}</h1>
           <p class="project-detail__overview">${description}</p>
           ${renderProjectLinks(links)}
-          ${renderFeatures(project)}
         </div>
         <aside class="project-detail__media">
           ${

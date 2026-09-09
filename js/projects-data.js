@@ -16,7 +16,6 @@ export const PROJECTS = [
     githubLabel: 'View on GitHub',
     demo: 'https://sami-severi.fi',
     demoLabel: 'Visit live site',
-    features: ['Dark/light mode', 'Scroll animations', 'Fully responsive', 'Accessible'],
     overview:
       'This is my personal portfolio site — built with vanilla HTML, CSS, and JavaScript, without a framework or build step. It presents my experience, skills, hobbies, and selected work in a fast, accessible layout with dark/light themes and scroll-driven motion. The goal was to show that careful frontend craft with core web technologies can still deliver a polished, production-ready experience.',
     technologiesPanel: {
