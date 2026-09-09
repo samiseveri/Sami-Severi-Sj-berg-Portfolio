@@ -131,7 +131,12 @@ const ProjectDetails = (() => {
     if (!root) return
 
     const params = new URLSearchParams(window.location.search)
-    const id = params.get('id') || 'folio'
+    const id = params.get('id')
+    if (!id) {
+      root.innerHTML =
+        '<p class="section__subtitle">Choose a project from the <a href="projects.html">projects list</a>.</p>'
+      return
+    }
     const project = getProjectById(id)
 
     if (!project) {

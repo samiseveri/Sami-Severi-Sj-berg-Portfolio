@@ -190,10 +190,6 @@
     padding-block: 1.15rem;
   }
 
-  .project-row__cta {
-    align-self: flex-end;
-  }
-
   .hobby-detail {
     grid-template-columns: 1fr;
   }

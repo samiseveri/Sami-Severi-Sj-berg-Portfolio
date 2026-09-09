@@ -1777,10 +1777,7 @@ ol {
 }
 
 .project-row__link {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
+  display: block;
   padding: 1.35rem 0.25rem;
   color: inherit;
   transition: background var(--duration);
@@ -1791,11 +1788,6 @@ ol {
 }
 
 .project-row__link:hover .project-row__title {
-  color: var(--accent-light);
-}
-
-.project-row__link:hover .project-row__cta {
-  transform: translateX(4px);
   color: var(--accent-light);
 }
 
@@ -1839,6 +1831,7 @@ ol {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
+  margin-bottom: 0.9rem;
 }
 
 .project-row__tags li {
@@ -1850,14 +1843,34 @@ ol {
   border: 1px solid var(--border);
 }
 
-.project-row__cta {
-  flex-shrink: 0;
-  font-size: 0.9rem;
+.project-row__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1rem;
+  align-items: center;
+}
+
+.project-row__action {
+  font-size: 0.88rem;
   font-weight: 600;
-  color: var(--text-subtle);
-  transition:
-    color var(--duration),
-    transform var(--duration) var(--ease-out);
+  text-decoration: none;
+  transition: color var(--duration), transform var(--duration) var(--ease-out);
+}
+
+.project-row__action--primary {
+  color: var(--accent-light);
+}
+
+.project-row__action--primary:hover {
+  transform: translateX(3px);
+}
+
+.project-row__action--secondary {
+  color: var(--text-muted);
+}
+
+.project-row__action--secondary:hover {
+  color: var(--accent-light);
 }
 
 /* Project details — hobby-details-style layout */
