@@ -222,6 +222,10 @@
     width: 100%;
   }
 
+  .project-detail__media:has(.hobby-tools) {
+    max-width: min(100%, 28rem);
+  }
+
   .hobby-carousel__nav {
     width: 38px;
     height: 38px;

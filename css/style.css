@@ -3059,6 +3059,26 @@ ol {
   color: #86efac;
 }
 
+.hobby-tools__item--html .hobby-tools__icon {
+  color: #fb923c;
+}
+
+.hobby-tools__item--css .hobby-tools__icon {
+  color: #60a5fa;
+}
+
+.hobby-tools__item--javascript .hobby-tools__icon {
+  color: #facc15;
+}
+
+.hobby-tools__item--svg .hobby-tools__icon {
+  color: #c084fc;
+}
+
+.hobby-tools__item--javascript {
+  border-color: rgba(250, 204, 21, 0.28);
+}
+
 .hobby-tools__body {
   min-width: 0;
   display: grid;

@@ -11,8 +11,6 @@ export const PROJECTS = [
     category: 'web',
     description:
       'Premium personal portfolio built with vanilla HTML, CSS, and JavaScript — no frameworks.',
-    image: 'assets/images/project-folio.svg',
-    imageFit: 'contain',
     tags: ['HTML5', 'CSS3', 'JavaScript', 'SVG'],
     github: 'https://github.com/samiseveri/Sami-Severi-Sj-berg-Portfolio',
     githubLabel: 'View on GitHub',
@@ -21,6 +19,37 @@ export const PROJECTS = [
     features: ['Dark/light mode', 'Scroll animations', 'Fully responsive', 'Accessible'],
     overview:
       'This is my personal portfolio site — built with vanilla HTML, CSS, and JavaScript, without a framework or build step. It presents my experience, skills, hobbies, and selected work in a fast, accessible layout with dark/light themes and scroll-driven motion. The goal was to show that careful frontend craft with core web technologies can still deliver a polished, production-ready experience.',
+    technologiesPanel: {
+      title: 'Technologies Used',
+      lead: 'Core web technologies only — no framework and no build step for the site itself.',
+      tools: [
+        {
+          id: 'html',
+          name: 'HTML5',
+          category: 'Markup',
+          description: 'Semantic page structure, accessible landmarks, and content markup',
+        },
+        {
+          id: 'css',
+          name: 'CSS3',
+          category: 'Styling',
+          description: 'Design system, responsive layout, themes, and motion',
+        },
+        {
+          id: 'javascript',
+          name: 'JavaScript',
+          category: 'Logic',
+          badge: 'Core',
+          description: 'ES modules for navigation, filtering, details pages, and interactions',
+        },
+        {
+          id: 'svg',
+          name: 'SVG',
+          category: 'Graphics',
+          description: 'Icons and lightweight vector graphics used throughout the UI',
+        },
+      ],
+    },
   },
 ]
 
