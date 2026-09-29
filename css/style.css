@@ -1976,12 +1976,27 @@ ol {
   margin-bottom: 0;
 }
 
-.skill-bar > span {
-  display: block;
+.skill-bar__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.4rem;
+}
+
+.skill-bar__name {
   font-size: 0.85rem;
   font-weight: 500;
-  margin-bottom: 0.4rem;
   color: var(--text-muted);
+}
+
+.skill-bar__meta {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  opacity: 0.75;
+  white-space: nowrap;
 }
 
 .skill-bar__track {
@@ -2028,10 +2043,19 @@ ol {
   color: inherit;
   will-change: transform;
   transition:
-    transform 0.4s var(--ease-spring),
     border-color var(--duration),
-    box-shadow 0.4s var(--ease-out),
+    box-shadow 0.35s var(--ease-out),
     background var(--duration);
+}
+
+/* After scroll-reveal finishes, keep hover response identical on every card */
+.hobby-card.reveal.is-reveal-done {
+  transition:
+    transform 0.35s var(--ease-spring),
+    border-color var(--duration),
+    box-shadow 0.35s var(--ease-out),
+    background var(--duration);
+  transition-delay: 0s;
 }
 
 .hobby-card__body {
@@ -2050,7 +2074,7 @@ ol {
   border-radius: inherit;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.45s ease;
+  transition: opacity 0.35s ease;
 }
 
 .hobby-card__scene::after {
@@ -2112,8 +2136,9 @@ ol {
     box-shadow:
       0 22px 44px -16px rgba(0, 0, 0, 0.55),
       0 0 48px -14px var(--accent-glow);
-    transform: translateY(-10px) scale(1.03);
   }
+
+  /* Transform lift is handled by data-tilt JS so every card shares the same timing */
 
   .hobby-card:hover .hobby-card__scene {
     opacity: 1;
