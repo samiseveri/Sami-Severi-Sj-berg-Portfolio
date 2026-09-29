@@ -339,8 +339,10 @@ const HobbyDetails = (() => {
     const root = document.querySelector('#hobby-detail')
     if (!root) return
 
+    // Prefer ?id=, then #id — some static servers strip query strings on clean URLs
     const params = new URLSearchParams(window.location.search)
-    const id = params.get('id') || 'gaming'
+    const hashId = window.location.hash.replace(/^#/, '')
+    const id = params.get('id') || hashId || 'gaming'
     const hobby = getHobbyById(id)
 
     if (!hobby) {
