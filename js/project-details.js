@@ -33,8 +33,10 @@ const ProjectDetails = (() => {
     const root = document.querySelector('#project-detail')
     if (!root) return
 
+    // Prefer ?id=, then #id — some static servers strip query strings on clean URLs
     const params = new URLSearchParams(window.location.search)
-    const id = params.get('id') || 'aurora'
+    const hashId = window.location.hash.replace(/^#/, '')
+    const id = params.get('id') || hashId || 'bittera-signage'
     const project = getProjectById(id)
 
     if (!project) {
