@@ -1,7 +1,7 @@
 /**
  * Hydrate contact details, CV links, and profile images from site-data.js
  */
-import { SITE, encodeAssetPath } from './site-data.js'
+import { SITE, assetUrl } from './site-data.js'
 
 function setText(selector, value) {
   document.querySelectorAll(selector).forEach((el) => {
@@ -91,7 +91,7 @@ function initEmailCopy() {
 }
 
 function initCvLinks() {
-  const encoded = encodeAssetPath(SITE.cvPath)
+  const encoded = assetUrl(SITE.cvPath)
   document.querySelectorAll('[data-site-cv]').forEach((el) => {
     el.setAttribute('href', encoded)
     if (SITE.cvDownloadName) {
@@ -102,7 +102,7 @@ function initCvLinks() {
 
 function initProfileImages() {
   document.querySelectorAll('[data-site-profile-image]').forEach((img) => {
-    img.setAttribute('src', encodeAssetPath(SITE.profileImage))
+    img.setAttribute('src', assetUrl(SITE.profileImage))
     if (!img.getAttribute('alt')) {
       img.setAttribute('alt', `${SITE.name} — profile photo`)
     }

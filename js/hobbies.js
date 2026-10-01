@@ -75,7 +75,7 @@ const Hobbies = (() => {
     grid.innerHTML = HOBBIES.map(
       (hobby) => `
       <a
-        href="hobby-details.html?id=${hobby.id}#${hobby.id}"
+        href="/pages/hobby-details.html?id=${hobby.id}#${hobby.id}"
         class="hobby-card glass reveal hobby-card--${hobby.id}"
         data-tilt
       >

@@ -14,7 +14,7 @@ const Projects = (() => {
       .map(
         (p) => `
       <article class="project-row reveal" data-category="${p.category}">
-        <a href="project-details.html?id=${p.id}#${p.id}" class="project-row__link">
+        <a href="/pages/project-details.html?id=${p.id}#${p.id}" class="project-row__link">
           <div class="project-row__main">
             <div class="project-row__meta">
               <h3 class="project-row__title">${p.title}</h3>
