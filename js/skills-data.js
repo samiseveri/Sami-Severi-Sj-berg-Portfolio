@@ -33,7 +33,7 @@ export const SKILL_CATEGORIES = [
   {
     title: 'Tools & Cloud',
     skills: [
-      { name: 'Git / GitHub', level: 90, years: 7, projects: "All of my projects" },
+      { name: 'Git / GitHub', level: 90, years: 7, projects: 'All of my projects' },
       { name: 'Linux', level: 85, years: 3, projects: 3 },
       { name: 'Raspberry Pi', level: 88, years: 1, projects: 1 },
       { name: 'Unity/Unreal Engine', level: 80, years: 2, projects: 4 },
@@ -46,5 +46,4 @@ export const SKILL_CATEGORIES = [
       { name: 'MySQL', level: 78, years: 4, projects: 5 },
     ],
   },
-  
 ]
