@@ -18,17 +18,31 @@ const Animations = (() => {
     if (!elements.length) return
 
     if (prefersReducedMotion()) {
-      elements.forEach((el) => el.classList.add('is-visible'))
+      elements.forEach((el) => {
+        el.classList.add('is-visible')
+        el.classList.add('is-reveal-done')
+      })
       return
     }
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible')
-            observer.unobserve(entry.target)
-          }
+          if (!entry.isIntersecting) return
+          const el = entry.target
+          el.classList.add('is-visible')
+          observer.unobserve(el)
+
+          // Clear stagger delays after the entrance so hover/tilt feel the same on every card
+          const style = getComputedStyle(el)
+          const delays = style.transitionDelay.split(',').map((v) => parseFloat(v) * 1000 || 0)
+          const durations = style.transitionDuration.split(',').map((v) => parseFloat(v) * 1000 || 0)
+          const wait = Math.max(0, ...delays.map((delay, i) => delay + (durations[i] || durations[0] || 0)))
+
+          window.setTimeout(() => {
+            el.style.transitionDelay = '0s'
+            el.classList.add('is-reveal-done')
+          }, wait)
         })
       },
       { threshold: 0.12, rootMargin: '0px 0px -40px 0px' },
@@ -154,22 +168,35 @@ const Animations = (() => {
     counters.forEach((el) => observer.observe(el))
   }
 
-  /** Subtle 3D tilt on value cards */
+  /** Subtle 3D tilt on hobby cards — same timing on every card */
   function initCardTilt() {
     if (prefersReducedMotion()) return
 
     const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches
     if (!canHover) return
 
+    const tiltTransition = 'transform 0.35s var(--ease-spring)'
+    const followTransition = 'transform 0.12s ease-out'
+
     document.querySelectorAll('[data-tilt]').forEach((card) => {
+      card.addEventListener('mouseenter', () => {
+        card.style.transitionDelay = '0s'
+        card.style.transition = tiltTransition
+        card.style.transform = 'perspective(700px) translateY(-10px) scale(1.03)'
+      })
+
       card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect()
         const x = (e.clientX - rect.left) / rect.width - 0.5
         const y = (e.clientY - rect.top) / rect.height - 0.5
+        card.style.transitionDelay = '0s'
+        card.style.transition = followTransition
         card.style.transform = `perspective(700px) rotateY(${x * 7}deg) rotateX(${-y * 7}deg) translateY(-10px) scale(1.03)`
       })
 
       card.addEventListener('mouseleave', () => {
+        card.style.transitionDelay = '0s'
+        card.style.transition = tiltTransition
         card.style.transform = ''
       })
     })

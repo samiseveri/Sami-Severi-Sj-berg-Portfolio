@@ -7,5 +7,5 @@
   </defs>
   <rect width="400" height="240" fill="#111113"/>
   <rect x="24" y="24" width="352" height="192" rx="12" fill="url(#f)" opacity="0.25"/>
-  <text x="200" y="128" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#fafafa" text-anchor="middle">This Portfolio</text>
+  <text x="200" y="128" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#fafafa" text-anchor="middle">This Site</text>
 </svg>

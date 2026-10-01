@@ -1840,6 +1840,67 @@ ol {
   color: var(--accent-2);
 }
 
+.project-status {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.project-status--done {
+  color: #4ade80;
+  border-color: rgba(74, 222, 128, 0.35);
+  background: rgba(74, 222, 128, 0.1);
+}
+
+.project-status--ongoing {
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.35);
+  background: rgba(56, 189, 248, 0.1);
+}
+
+.project-status--left {
+  color: #fbbf24;
+  border-color: rgba(251, 191, 36, 0.35);
+  background: rgba(251, 191, 36, 0.1);
+}
+
+[data-theme='light'] .project-status--done {
+  color: #15803d;
+  border-color: rgba(21, 128, 61, 0.3);
+  background: rgba(21, 128, 61, 0.08);
+}
+
+[data-theme='light'] .project-status--ongoing {
+  color: #0369a1;
+  border-color: rgba(3, 105, 161, 0.3);
+  background: rgba(3, 105, 161, 0.08);
+}
+
+[data-theme='light'] .project-status--left {
+  color: #b45309;
+  border-color: rgba(180, 83, 9, 0.3);
+  background: rgba(180, 83, 9, 0.08);
+}
+
+.project-detail__eyebrow-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.75rem;
+}
+
+.project-detail__eyebrow-row .section__eyebrow {
+  margin-bottom: 0;
+}
+
 .project-row__desc {
   font-size: 0.9rem;
   color: var(--text-muted);
@@ -1976,12 +2037,27 @@ ol {
   margin-bottom: 0;
 }
 
-.skill-bar > span {
-  display: block;
+.skill-bar__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.4rem;
+}
+
+.skill-bar__name {
   font-size: 0.85rem;
   font-weight: 500;
-  margin-bottom: 0.4rem;
   color: var(--text-muted);
+}
+
+.skill-bar__meta {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  opacity: 0.75;
+  white-space: nowrap;
 }
 
 .skill-bar__track {
@@ -2028,10 +2104,19 @@ ol {
   color: inherit;
   will-change: transform;
   transition:
-    transform 0.4s var(--ease-spring),
     border-color var(--duration),
-    box-shadow 0.4s var(--ease-out),
+    box-shadow 0.35s var(--ease-out),
     background var(--duration);
+}
+
+/* After scroll-reveal finishes, keep hover response identical on every card */
+.hobby-card.reveal.is-reveal-done {
+  transition:
+    transform 0.35s var(--ease-spring),
+    border-color var(--duration),
+    box-shadow 0.35s var(--ease-out),
+    background var(--duration);
+  transition-delay: 0s;
 }
 
 .hobby-card__body {
@@ -2050,7 +2135,7 @@ ol {
   border-radius: inherit;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.45s ease;
+  transition: opacity 0.35s ease;
 }
 
 .hobby-card__scene::after {
@@ -2112,8 +2197,9 @@ ol {
     box-shadow:
       0 22px 44px -16px rgba(0, 0, 0, 0.55),
       0 0 48px -14px var(--accent-glow);
-    transform: translateY(-10px) scale(1.03);
   }
+
+  /* Transform lift is handled by data-tilt JS so every card shares the same timing */
 
   .hobby-card:hover .hobby-card__scene {
     opacity: 1;
