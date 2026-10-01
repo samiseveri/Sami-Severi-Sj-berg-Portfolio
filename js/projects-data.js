@@ -102,6 +102,48 @@ export const PROJECTS = [
       'A hobbyist board-game website built as backend course teamwork. The stack stays intentionally server-centric — Express, MongoDB, and Handlebars — with a clear project structure and tests to practice production backend habits.',
   },
   {
+    id: 'fullstack-course',
+    title: 'Full Stack Course',
+    category: 'web',
+    status: 'ongoing',
+    description:
+      'Coursework repository covering modern full-stack web development — React frontends, Redux state management, and progressive part-based exercises.',
+    image: 'assets/images/project-fullstack-course.svg',
+    tags: ['JavaScript', 'React', 'Redux', 'HTML', 'CSS'],
+    github: 'https://github.com/samiseveri/Fullstack-course',
+    demo: null,
+    features: [
+      'Part-based full-stack coursework from fundamentals through advanced React',
+      'React applications with Redux Toolkit for client-side state',
+      'HTTP client work with Axios and JSON-backed exercise setups',
+      'HTML, CSS, and JavaScript practice across multiple project parts',
+      'Public GitHub repository documenting the full learning path',
+    ],
+    overview:
+      'A dedicated repository for my full-stack course work. It is organized into numbered parts and includes React, Redux Toolkit, Axios, and classic web fundamentals — building practical experience across the modern JavaScript stack.',
+  },
+  {
+    id: 'gamelib',
+    title: 'GameLib',
+    category: 'web',
+    status: 'ongoing',
+    description:
+      'Full-stack game library aggregator — sync Steam, Epic, and GOG libraries into one place with Dockerized React and Node.js infrastructure.',
+    image: 'assets/images/project-gamelib.svg',
+    tags: ['React', 'Node.js', 'PostgreSQL', 'Docker', 'Prisma'],
+    github: 'https://github.com/Artur-Nayman/GameLib',
+    demo: null,
+    features: [
+      'Infrastructure engineering and full-stack development on a theFIRMA team project',
+      'React (Vite) client with Zustand and Tailwind CSS',
+      'Node.js + Express API with PostgreSQL, Prisma, and JWT auth',
+      'Docker Compose setup for synchronized local development',
+      'Planned multi-store sync, library comparison, and cross-platform inventory',
+    ],
+    overview:
+      'GameLib is a team project at theFIRMA (Turku University of Applied Sciences) that aggregates game libraries from platforms like Steam, Epic Games, and GOG into one web app. I contribute as Infrastructure Engineer and Full-stack Developer — Dockerized client/server setup, PostgreSQL, and full-stack features — with the project in active development (Phase 1: Foundation & Sync).',
+  },
+  {
     id: 'studisco-games',
     title: 'Studisco Game Production',
     category: 'games',
@@ -126,7 +168,7 @@ export const PROJECTS = [
     id: 'this-site',
     title: 'This Site',
     category: 'web',
-    status: 'ongoing',
+    status: 'done',
     description:
       'Personal portfolio built with vanilla HTML, CSS, and JavaScript — dark/light themes, motion, and accessible multi-page structure.',
     image: 'assets/images/project-folio.svg',
