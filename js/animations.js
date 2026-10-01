@@ -36,8 +36,13 @@ const Animations = (() => {
           // Clear stagger delays after the entrance so hover/tilt feel the same on every card
           const style = getComputedStyle(el)
           const delays = style.transitionDelay.split(',').map((v) => parseFloat(v) * 1000 || 0)
-          const durations = style.transitionDuration.split(',').map((v) => parseFloat(v) * 1000 || 0)
-          const wait = Math.max(0, ...delays.map((delay, i) => delay + (durations[i] || durations[0] || 0)))
+          const durations = style.transitionDuration
+            .split(',')
+            .map((v) => parseFloat(v) * 1000 || 0)
+          const wait = Math.max(
+            0,
+            ...delays.map((delay, i) => delay + (durations[i] || durations[0] || 0)),
+          )
 
           window.setTimeout(() => {
             el.style.transitionDelay = '0s'
