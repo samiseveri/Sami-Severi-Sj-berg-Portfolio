@@ -2,13 +2,22 @@
   "directoryListing": false,
   "redirects": [
     { "source": "/about", "destination": "/pages/about.html", "type": 301 },
+    { "source": "/about.html", "destination": "/pages/about.html", "type": 301 },
     { "source": "/experience", "destination": "/pages/experience.html", "type": 301 },
+    { "source": "/experience.html", "destination": "/pages/experience.html", "type": 301 },
     { "source": "/projects", "destination": "/pages/projects.html", "type": 301 },
+    { "source": "/projects.html", "destination": "/pages/projects.html", "type": 301 },
     { "source": "/project-details", "destination": "/pages/project-details.html", "type": 301 },
+    { "source": "/project-details.html", "destination": "/pages/project-details.html", "type": 301 },
     { "source": "/skills", "destination": "/pages/skills.html", "type": 301 },
+    { "source": "/skills.html", "destination": "/pages/skills.html", "type": 301 },
     { "source": "/education", "destination": "/pages/education.html", "type": 301 },
+    { "source": "/education.html", "destination": "/pages/education.html", "type": 301 },
     { "source": "/hobbies", "destination": "/pages/hobbies.html", "type": 301 },
+    { "source": "/hobbies.html", "destination": "/pages/hobbies.html", "type": 301 },
     { "source": "/hobby-details", "destination": "/pages/hobby-details.html", "type": 301 },
-    { "source": "/contact", "destination": "/pages/contact.html", "type": 301 }
+    { "source": "/hobby-details.html", "destination": "/pages/hobby-details.html", "type": 301 },
+    { "source": "/contact", "destination": "/pages/contact.html", "type": 301 },
+    { "source": "/contact.html", "destination": "/pages/contact.html", "type": 301 }
   ]
 }

@@ -8,7 +8,7 @@
     "start": "npx --yes serve . -p 5500",
     "serve": "npx --yes serve . -p 5500",
     "lint:js": "eslint \"js/**/*.js\"",
-    "lint:html": "html-validate \"pages/**/*.html\" \"*.html\"",
+    "lint:html": "html-validate \"pages/**/*.html\" \"index.html\" \"404.html\"",
     "lint:css": "stylelint \"css/**/*.css\"",
     "lint": "npm run lint:js && npm run lint:html && npm run lint:css",
     "format:check": "prettier --check \"js/**/*.js\" \"scripts/**/*.mjs\" \"eslint.config.js\" \"package.json\" \"README.md\" \".github/**/*.{yml,yaml}\" \".*.json\" \".vscode/*.json\"",

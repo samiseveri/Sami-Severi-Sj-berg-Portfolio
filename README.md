@@ -24,51 +24,32 @@ npx serve . -p 5500
 ## Project structure
 
 ```
-index.html              Root redirect → pages/index.html
+index.html              Entry redirect → pages/index.html
 404.html                Not-found page
-pages/
-  index.html            Home — hero, previews, CTAs, references
-  about.html            About Me — story, values, timeline
-  experience.html       Work history — expandable role cards
-  projects.html         Project list with category filters
-  project-details.html  Individual project case study (?id=)
-  skills.html           Skills with animated progress bars
-  education.html        Education & certifications timeline
-  hobbies.html          Hobby cards with hover scenes
-  hobby-details.html    Individual hobby detail (?id=)
-  contact.html          Contact details and resume download
+google*.html            Search Console verification (must stay at root)
 
-css/
-  style.css             Design system & component styles
-  animations.css        Keyframes & scroll reveals
-  responsive.css        Breakpoints & mobile navigation
+pages/                  All site pages (edit these)
+  index.html            Home
+  about.html            About
+  experience.html       Work history
+  projects.html         Project list
+  project-details.html  Project case study (?id=)
+  skills.html           Skills
+  education.html        Education
+  hobbies.html          Hobbies
+  hobby-details.html    Hobby detail (?id=)
+  contact.html          Contact
 
-js/
-  main.js               App bootstrap (loader, progress, modules)
-  site-data.js          Single source of truth for profile/contact
-  site-content.js       Hydrates contact/CV/profile/year from site-data
-  social-links.js       Shared social icons
-  navigation.js         Nav, theme toggle, mobile menu
-  animations.js         Typing, counters, tilt, reveals
-  experience.js         Expandable experience cards
-  projects.js           Accessible project filtering
-  projects-data.js      Shared project content
-  project-details.js    Dynamic project detail page
-  skills.js             Skill bar animations
-  hobbies-data.js       Shared hobby content
-  hobbies.js            Hobby card grid + hover scenes
-  hobby-details.js      Hobby detail page + galleries
+css/                    Styles
+js/                     Scripts & page data
+assets/                 Images, icons, documents
+scripts/                Local tooling (link checks, crawls)
 
-assets/
-  images/               Photos, project art, hobby galleries
-  icons/                UI icons + favicon
-  documents/            Resume PDF
-
-robots.txt              Crawler rules
-sitemap.xml             Page list (set SITE_ORIGIN after deploy)
-scripts/check-links.mjs Local link checker
+serve.json              Local redirects for old root URLs
+robots.txt / sitemap.xml
 ```
 
+Root stays thin on purpose: content lives in `pages/`, styles in `css/`, logic in `js/`, media in `assets/`.
 ## Features
 
 - Dark mode default with light/dark theme toggle (saved in `localStorage`)
