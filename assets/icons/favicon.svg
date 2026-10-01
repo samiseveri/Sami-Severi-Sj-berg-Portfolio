@@ -1,10 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Sami-Severi Sjöberg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
     <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#22d3ee"/>
-      <stop offset="100%" stop-color="#6366f1"/>
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="14" fill="url(#g)"/>
-  <text x="32" y="42" text-anchor="middle" font-family="Inter, Segoe UI, sans-serif" font-size="32" font-weight="700" fill="#ffffff">S</text>
+  <rect width="64" height="64" rx="18" fill="url(#g)"/>
+  <!-- Bold S matching the header logo mark (path so browser tabs render it) -->
+  <path fill="#ffffff" d="M41.2 20.4c0-4.1-3.3-7.1-9.2-7.1-5.8 0-9.8 2.8-10.9 7.1l5.8 1.7c.6-2.1 2.4-3.4 5.1-3.4 2.6 0 4.1 1.2 4.1 3.1 0 1.9-1.3 2.9-5.4 4.1-5.7 1.7-10.1 3.9-10.1 10.1 0 5.7 4.4 9.4 10.6 9.4 5.7 0 9.9-2.6 11.4-7.1l-5.7-1.8c-.8 2.3-2.7 3.6-5.6 3.6-2.9 0-4.7-1.4-4.7-3.5 0-2 1.4-3.1 5.8-4.4 5.9-1.7 9.8-4.4 9.8-10.9z"/>
 </svg>
