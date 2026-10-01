@@ -50,6 +50,7 @@ robots.txt / sitemap.xml
 ```
 
 Root stays thin on purpose: content lives in `pages/`, styles in `css/`, logic in `js/`, media in `assets/`.
+
 ## Features
 
 - Dark mode default with light/dark theme toggle (saved in `localStorage`)
