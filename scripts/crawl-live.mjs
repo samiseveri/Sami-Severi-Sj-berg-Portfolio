@@ -16,9 +16,8 @@ const startPaths = [
   '/pages/hobbies.html',
   '/pages/hobby-details.html?id=gaming#gaming',
   '/pages/contact.html',
-  '/about.html',
   '/about',
-  '/contact.html',
+  '/about.html',
   '/contact',
   '/404.html',
 ]
