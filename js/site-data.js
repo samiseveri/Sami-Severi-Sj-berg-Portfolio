@@ -42,3 +42,22 @@ export function encodeAssetPath(path) {
     .map((segment) => encodeURIComponent(segment))
     .join('/')
 }
+
+/** Relative prefix from the current HTML page back to the site root. */
+export function getSiteRoot() {
+  const path = window.location.pathname.replace(/\\/g, '/')
+  return /\/pages(\/|$)/.test(path) ? '../' : ''
+}
+
+/** Resolve a repo-root asset path (e.g. assets/...) from any HTML page depth. */
+export function assetUrl(path) {
+  const clean = String(path || '').replace(/^\.?\//, '')
+  return encodeAssetPath(`${getSiteRoot()}${clean}`)
+}
+
+/** Root-absolute URL for a page under /pages/ (safe with clean URLs / no trailing slash). */
+export function pageUrl(page, query = '') {
+  const name = String(page || 'index.html').replace(/^\.?\//, '')
+  const q = query ? (query.startsWith('?') ? query : `?${query}`) : ''
+  return `/pages/${name}${q}`
+}

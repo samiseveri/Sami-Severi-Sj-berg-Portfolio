@@ -3,14 +3,14 @@
  */
 const Navigation = (() => {
   const NAV_LINKS = [
-    { href: 'index.html', label: 'Home', page: 'home' },
-    { href: 'about.html', label: 'About', page: 'about' },
-    { href: 'experience.html', label: 'Experience', page: 'experience' },
-    { href: 'projects.html', label: 'Projects', page: 'projects' },
-    { href: 'skills.html', label: 'Skills', page: 'skills' },
-    { href: 'education.html', label: 'Education', page: 'education' },
-    { href: 'hobbies.html', label: 'Hobbies', page: 'hobbies' },
-    { href: 'contact.html', label: 'Contact', page: 'contact' },
+    { href: '/pages/index.html', label: 'Home', page: 'home' },
+    { href: '/pages/about.html', label: 'About', page: 'about' },
+    { href: '/pages/experience.html', label: 'Experience', page: 'experience' },
+    { href: '/pages/projects.html', label: 'Projects', page: 'projects' },
+    { href: '/pages/skills.html', label: 'Skills', page: 'skills' },
+    { href: '/pages/education.html', label: 'Education', page: 'education' },
+    { href: '/pages/hobbies.html', label: 'Hobbies', page: 'hobbies' },
+    { href: '/pages/contact.html', label: 'Contact', page: 'contact' },
   ]
 
   let navbar = null

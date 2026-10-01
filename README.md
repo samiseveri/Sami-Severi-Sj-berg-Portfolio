@@ -24,17 +24,19 @@ npx serve . -p 5500
 ## Project structure
 
 ```
-index.html              Home — hero, previews, CTAs, references
-about.html              About Me — story, values, timeline
-experience.html         Work history — expandable role cards
-projects.html           Project list with category filters
-project-details.html    Individual project case study (?id=)
-skills.html             Skills with animated progress bars
-education.html          Education & certifications timeline
-hobbies.html            Hobby cards with hover scenes
-hobby-details.html      Individual hobby detail (?id=)
-contact.html            Contact details and resume download
+index.html              Root redirect → pages/index.html
 404.html                Not-found page
+pages/
+  index.html            Home — hero, previews, CTAs, references
+  about.html            About Me — story, values, timeline
+  experience.html       Work history — expandable role cards
+  projects.html         Project list with category filters
+  project-details.html  Individual project case study (?id=)
+  skills.html           Skills with animated progress bars
+  education.html        Education & certifications timeline
+  hobbies.html          Hobby cards with hover scenes
+  hobby-details.html    Individual hobby detail (?id=)
+  contact.html          Contact details and resume download
 
 css/
   style.css             Design system & component styles
@@ -85,10 +87,10 @@ scripts/check-links.mjs Local link checker
 | Name, email, phone, socials, CV, profile image | `js/site-data.js`                                             |
 | Projects list / links                          | `js/projects-data.js`                                         |
 | Hobbies list / galleries                       | `js/hobbies-data.js` + `assets/images/hobbies/*-gallery.json` |
-| Work experience                                | `experience.html`                                             |
-| About bio & timeline                           | `about.html`                                                  |
-| Skills & levels                                | `skills.html` (`data-skill-bar="90"` = 90%)                   |
-| Education entries                              | `education.html`                                              |
+| Work experience                                | `pages/experience.html`                                       |
+| About bio & timeline                           | `pages/about.html`                                            |
+| Skills & levels                                | `pages/skills.html` (`data-skill-bar="90"` = 90%)             |
+| Education entries                              | `pages/education.html`                                        |
 | Colors & fonts                                 | CSS variables in `css/style.css` (`:root`)                    |
 | Deployed site URL for sitemap/OG               | `js/site-data.js` (`siteUrl`) and `sitemap.xml`               |
 
@@ -97,7 +99,7 @@ scripts/check-links.mjs Local link checker
 1. Add a thumbnail under `assets/images/`.
 2. Add an entry to `PROJECTS` in `js/projects-data.js`.
 3. Set real `github` / `demo` URLs, or leave them `null` when unavailable.
-4. The project appears on `projects.html` and at `project-details.html?id=your-id`.
+4. The project appears on `pages/projects.html` and at `pages/project-details.html?id=your-id`.
 
 ### Navigation links
 

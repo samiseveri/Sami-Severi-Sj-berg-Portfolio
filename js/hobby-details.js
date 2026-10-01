@@ -2,11 +2,10 @@
  * Hobby details page — populate from URL ?id=
  */
 import { getHobbyById } from './hobbies-data.js'
-
-const STEAM_LOGO_PATH = 'assets/images/steam-logo-png_seeklogo-290636.png'
+import { assetUrl } from './site-data.js'
 
 const LINK_ICONS = {
-  steam: `<img class="hobby-detail__steam-logo" src="${STEAM_LOGO_PATH}" width="36" height="36" alt="" aria-hidden="true" decoding="async" />`,
+  steam: `<img class="hobby-detail__steam-logo" src="${assetUrl('assets/images/steam-logo-png_seeklogo-290636.png')}" width="36" height="36" alt="" aria-hidden="true" decoding="async" />`,
 }
 
 const CAROUSEL_NAV = {
@@ -14,33 +13,26 @@ const CAROUSEL_NAV = {
   next: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>`,
 }
 
-function encodeImagePath(path) {
-  return path
-    .split('/')
-    .map((segment) => encodeURIComponent(segment))
-    .join('/')
-}
-
 async function loadGalleryImages(hobby) {
   if (hobby.gallery?.length) {
-    return hobby.gallery.map(encodeImagePath)
+    return hobby.gallery.map(assetUrl)
   }
 
   if (hobby.galleryManifest) {
     try {
-      const response = await fetch(hobby.galleryManifest)
+      const response = await fetch(assetUrl(hobby.galleryManifest))
       if (!response.ok) throw new Error('Gallery manifest not found')
 
       const data = await response.json()
       const folder = (data.folder || 'assets/images/hobbies').replace(/\/$/, '')
 
-      return (data.images || []).map((name) => encodeImagePath(`${folder}/${name}`))
+      return (data.images || []).map((name) => assetUrl(`${folder}/${name}`))
     } catch {
       /* fall back to single image */
     }
   }
 
-  return hobby.image ? [encodeImagePath(hobby.image)] : []
+  return hobby.image ? [assetUrl(hobby.image)] : []
 }
 
 function renderHobbyLinks(links) {
@@ -347,14 +339,14 @@ const HobbyDetails = (() => {
 
     if (!hobby) {
       root.innerHTML =
-        '<p class="section__subtitle">Hobby not found. <a href="hobbies.html">Back to hobbies</a></p>'
+        '<p class="section__subtitle">Hobby not found. <a href="/pages/hobbies.html">Back to hobbies</a></p>'
       return
     }
 
     document.title = `${hobby.title} — Sami-Severi Sjöberg`
 
     root.innerHTML = `
-      <a href="hobbies.html" class="hobby-detail__back reveal">← All Hobbies</a>
+      <a href="/pages/hobbies.html" class="hobby-detail__back reveal">← All Hobbies</a>
       <div class="hobby-detail reveal">
         <div class="hobby-detail__content">
           <div class="hobby-detail__icon" aria-hidden="true">${hobby.icon}</div>

@@ -8,7 +8,29 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
-const htmlFiles = fs.readdirSync(root).filter((name) => name.endsWith('.html'))
+
+function collectHtmlFiles(dir, base = '') {
+  const entries = fs.readdirSync(dir, { withFileTypes: true })
+  const files = []
+
+  for (const entry of entries) {
+    if (entry.name.startsWith('.')) continue
+    if (entry.name === 'node_modules') continue
+
+    const rel = base ? `${base}/${entry.name}` : entry.name
+    const abs = path.join(dir, entry.name)
+
+    if (entry.isDirectory()) {
+      files.push(...collectHtmlFiles(abs, rel))
+    } else if (entry.isFile() && entry.name.endsWith('.html')) {
+      files.push(rel)
+    }
+  }
+
+  return files
+}
+
+const htmlFiles = collectHtmlFiles(root)
 
 const attrPattern = /\b(?:href|src)=["']([^"'#]+)["']/gi
 const skipProtocols = /^(mailto:|tel:|data:|javascript:)/i
@@ -19,6 +41,9 @@ let checked = 0
 function resolveLocal(fromFile, target) {
   const clean = target.split('?')[0].split('#')[0]
   if (!clean || skipProtocols.test(clean) || /^https?:\/\//i.test(clean)) return null
+  if (clean.startsWith('/')) {
+    return path.normalize(path.join(root, decodeURIComponent(clean.slice(1))))
+  }
   const baseDir = path.dirname(path.join(root, fromFile))
   return path.normalize(path.join(baseDir, decodeURIComponent(clean)))
 }
