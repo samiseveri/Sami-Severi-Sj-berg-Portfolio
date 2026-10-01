@@ -1,9 +1,14 @@
 /**
  * Projects page — accessible category filtering (filter buttons, not tabs)
  */
-import { PROJECTS } from './projects-data.js'
+import { PROJECTS, getProjectStatusLabel } from './projects-data.js'
 
 const Projects = (() => {
+  function renderStatus(status) {
+    if (!status) return ''
+    return `<span class="project-status project-status--${status}">${getProjectStatusLabel(status)}</span>`
+  }
+
   function renderGrid(container, items) {
     container.innerHTML = items
       .map(
@@ -14,6 +19,7 @@ const Projects = (() => {
             <div class="project-row__meta">
               <h3 class="project-row__title">${p.title}</h3>
               <span class="project-row__category">${p.category}</span>
+              ${renderStatus(p.status)}
             </div>
             <p class="project-row__desc">${p.description}</p>
             <ul class="project-row__tags">${p.tags.map((t) => `<li>${t}</li>`).join('')}</ul>
