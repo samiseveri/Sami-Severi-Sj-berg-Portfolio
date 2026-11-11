@@ -68,7 +68,7 @@ class CV(FPDF):
         self.sidebar_heading("Education", y)
         y += 7
         y = self.sidebar_edu(
-            "2023 — Ongoing",
+            "2023 — 2027",
             "ICT Engineering",
             "Software engineering & project management",
             "TUAS (Turku UAS)",
@@ -128,7 +128,7 @@ class CV(FPDF):
         self.set_xy(8, y + 3.6)
         self.set_font("Body", "", 8.5)
         self.set_text_color(*WHITE)
-        self.multi_cell(self.sidebar_w - 16, 4, value)
+        self.multi_cell(self.sidebar_w - 16, 4, value, align="L")
         return self.get_y() + 2.5
 
     def sidebar_edu(self, dates, title, detail, school, y):
@@ -139,16 +139,16 @@ class CV(FPDF):
         self.set_xy(8, y + 3.4)
         self.set_font("Body", "B", 8.5)
         self.set_text_color(*WHITE)
-        self.multi_cell(self.sidebar_w - 16, 3.6, title)
+        self.multi_cell(self.sidebar_w - 16, 3.6, title, align="L")
         y2 = self.get_y()
         self.set_xy(8, y2)
         self.set_font("Body", "", 7.5)
         self.set_text_color(200, 210, 225)
-        self.multi_cell(self.sidebar_w - 16, 3.3, detail)
+        self.multi_cell(self.sidebar_w - 16, 3.3, detail, align="L")
         y3 = self.get_y()
         self.set_xy(8, y3)
         self.set_font("Body", "I", 7.5)
-        self.multi_cell(self.sidebar_w - 16, 3.3, school)
+        self.multi_cell(self.sidebar_w - 16, 3.3, school, align="L")
         return self.get_y() + 3.2
 
     def sidebar_bullet(self, text, y):
@@ -157,7 +157,7 @@ class CV(FPDF):
         self.set_text_color(*WHITE)
         self.cell(3, 4, "•")
         self.set_xy(12, y)
-        self.multi_cell(self.sidebar_w - 20, 4, text)
+        self.multi_cell(self.sidebar_w - 20, 4, text, align="L")
         return self.get_y() + 0.8
 
     def section_title(self, text, y):
@@ -200,7 +200,7 @@ class CV(FPDF):
             self.cell(3, 3.6, "•")
             self.set_text_color(*TEXT)
             self.set_xy(cx + 7, y2)
-            self.multi_cell(self.content_w - 39, 3.6, b)
+            self.multi_cell(self.content_w - 39, 3.6, b, align="L")
             y2 = self.get_y() + 0.4
         return y2 + 2.8
 
@@ -214,7 +214,7 @@ class CV(FPDF):
         self.set_xy(self.margin_l_main + 5, y + 4)
         self.set_font("Body", "", 8.5)
         self.set_text_color(*MUTED)
-        self.multi_cell(self.content_w - 5, 3.6, detail)
+        self.multi_cell(self.content_w - 5, 3.6, detail, align="L")
         return self.get_y() + 2.2
 
     def build(self):
@@ -243,7 +243,7 @@ class CV(FPDF):
         self.set_xy(self.margin_l_main, y + 18)
         self.set_font("Body", "", 9.5)
         self.set_text_color(*TEXT)
-        self.multi_cell(self.content_w, 4.2, summary)
+        self.multi_cell(self.content_w, 4.2, summary, align="L")
         y = self.get_y() + 5
 
         # Experience
@@ -338,7 +338,8 @@ class CV(FPDF):
         self.multi_cell(
             self.content_w,
             4.2,
-            "Sabre fencing, gaming, hardware & tech projects, cooking, nature, and voluntary work.",
+            "Sabre fencing, gaming, hardware & tech projects, cooking, fishing, and voluntary work.",
+            align="L",
         )
 
 
