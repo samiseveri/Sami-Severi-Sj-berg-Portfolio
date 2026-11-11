@@ -37,6 +37,28 @@ export const PROJECTS = [
       'Built during my Full Stack Engineer internship at Bittera Oy, and continued as ongoing work where I am completing my thesis on localized software and its importance. The system lets operators manage advertising screens at shops, offices, and lobbies from one website, while Raspberry Pi devices download content and play it fullscreen — even through short network drops.',
   },
   {
+    id: 'tarume',
+    title: 'Tarume',
+    category: 'web',
+    status: 'ongoing',
+    description:
+      'Frontend development on a product covered by NDA — building and refining the user-facing web interface as part of an active team.',
+    image: 'assets/images/project-tarume.svg',
+    tags: ['Frontend', 'JavaScript', 'UI', 'NDA'],
+    github: null,
+    website: 'https://tarume.com/fi',
+    websiteLabel: 'Visit Tarume',
+    demo: null,
+    features: [
+      'Frontend developer on an ongoing product engagement',
+      'Implementing and iterating on user-facing web UI',
+      'Collaborating with the team on interface quality and delivery',
+      'Project details are limited under a non-disclosure agreement',
+    ],
+    overview:
+      'Tarume is an ongoing project where I work as a frontend developer. Because the engagement is under NDA, public details about the product, stack, and deliverables are intentionally limited — the focus here is on the role and the type of work.',
+  },
+  {
     id: 'market-monitor',
     title: 'Market Monitor',
     category: 'web',
