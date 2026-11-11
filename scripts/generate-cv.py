@@ -63,6 +63,7 @@ class CV(FPDF):
         y += 7
         y = self.sidebar_field("Phone", "+358 44 010 1160", y)
         y = self.sidebar_field("Email", "samiseveri.sjoberg@gmail.com", y)
+        y = self.sidebar_field("Website", "sami-severi.fi", y)
         y += 4
 
         self.sidebar_heading("Education", y)
