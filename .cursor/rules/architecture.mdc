@@ -1,0 +1,29 @@
+---
+description: Keep the Tecture architecture/ map in sync when structure, interfaces, data, or external services change
+alwaysApply: true
+---
+
+# Architecture map must stay in sync
+
+This repo has a Tecture architecture map under `architecture/` (system context → containers → components).
+
+Whenever a change **adds or modifies** any of the following, update the architecture map **in the same change** (same commit / same PR):
+
+- Deployable parts or major folders (pages, JS modules, CSS, assets layout)
+- Interfaces between modules (new imports/exports, page entry wiring in `main.js`, public URLs)
+- Content/data stores (e.g. `js/*-data.js`, gallery JSON, or a future database/API)
+- External services or outbound integrations (new social/profile hosts, APIs, analytics, auth, hosting hooks)
+
+## What to update
+
+1. Adjust the relevant diagram(s) in `architecture/diagrams/` (nodes, edges, `path`, `subDiagramId`).
+2. Add/update/remove matching files in `architecture/descriptions/` (one Markdown file per node id).
+3. Keep `architecture/manifest.json` diagram list and description accurate.
+4. Re-validate with the installed skill scripts when available:
+   - `node .cursor/skills/architecture-docs/scripts/validate.mjs`
+   - `node .cursor/skills/architecture-docs/scripts/evidence.mjs`
+5. Commit refreshed `architecture/.tecture/drift.json` when the evidence script rewrites it.
+
+## Do not skip
+
+Do not leave architecture docs for a follow-up if the code change crosses the boundaries above. Pure copy/style tweaks inside an existing page with no new seams do not require a map update.

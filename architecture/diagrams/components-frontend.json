@@ -1,0 +1,110 @@
+{
+  "name": "Portfolio Frontend — Components",
+  "level": 3,
+  "meta": {
+    "direction": "TB"
+  },
+  "nodes": [
+    {
+      "id": "app-bootstrap",
+      "label": "App Bootstrap",
+      "path": "js/main.js",
+      "meta": {
+        "type": "frontend",
+        "technology": "javascript"
+      }
+    },
+    {
+      "id": "navigation",
+      "label": "Navigation",
+      "path": "js/navigation.js",
+      "meta": {
+        "type": "frontend",
+        "technology": "javascript"
+      }
+    },
+    {
+      "id": "site-identity",
+      "label": "Site Identity",
+      "path": "js/site-content.js",
+      "meta": {
+        "type": "frontend",
+        "technology": "javascript"
+      }
+    },
+    {
+      "id": "projects-feature",
+      "label": "Projects Feature",
+      "path": "js/projects.js",
+      "meta": {
+        "type": "frontend",
+        "technology": "javascript"
+      }
+    },
+    {
+      "id": "hobbies-feature",
+      "label": "Hobbies Feature",
+      "path": "js/hobbies.js",
+      "meta": {
+        "type": "frontend",
+        "technology": "javascript"
+      }
+    },
+    {
+      "id": "skills-feature",
+      "label": "Skills Feature",
+      "path": "js/skills.js",
+      "meta": {
+        "type": "frontend",
+        "technology": "javascript"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e-app-bootstrap-navigation",
+      "source": "app-bootstrap",
+      "target": "navigation",
+      "label": "calls Navigation.init()",
+      "meta": {
+        "type": "calls"
+      }
+    },
+    {
+      "id": "e-app-bootstrap-site-identity",
+      "source": "app-bootstrap",
+      "target": "site-identity",
+      "label": "calls SiteContent.init() + SocialLinks.init()",
+      "meta": {
+        "type": "calls"
+      }
+    },
+    {
+      "id": "e-app-bootstrap-projects-feature",
+      "source": "app-bootstrap",
+      "target": "projects-feature",
+      "label": "calls Projects.init() + ProjectDetails.init()",
+      "meta": {
+        "type": "calls"
+      }
+    },
+    {
+      "id": "e-app-bootstrap-hobbies-feature",
+      "source": "app-bootstrap",
+      "target": "hobbies-feature",
+      "label": "calls Hobbies.init() + HobbyDetails.init()",
+      "meta": {
+        "type": "calls"
+      }
+    },
+    {
+      "id": "e-app-bootstrap-skills-feature",
+      "source": "app-bootstrap",
+      "target": "skills-feature",
+      "label": "calls Skills.init()",
+      "meta": {
+        "type": "calls"
+      }
+    }
+  ]
+}

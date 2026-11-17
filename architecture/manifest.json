@@ -1,0 +1,12 @@
+{
+  "name": "Sami-Severi Sjöberg Portfolio",
+  "description": "Henkilökohtainen portfolio-sivusto, joka esittelee Sami-Severi Sjöbergin taustan, työkokemuksen, projektit, taidot, koulutuksen ja harrastukset. Sivusto on staattinen: HTML5, CSS3 ja vanilla JavaScript ES-moduuleina — ei sovelluspalvelinta, ei API:a eikä tietokantaa.\n\nSisältö asuu repon tiedostoissa: sivut pages/-kansiossa, tyylit css/-kansiossa, logiikka ja datamoduulit js/-kansiossa sekä kuvat ja dokumentit assets/-kansiossa. Selaimessa main.js käynnistää navigaation, teeman, sivukohtaiset näkymät ja animaatiot. Teemavalinta tallentuu localStorageen.\n\nUlkoiset palvelut ovat vain linkkejä: GitHub (profiili ja projektirepot), LinkedIn ja Instagram. Paikallinen kehitys käyttää staattista tiedostopalvelinta (npm start / serve). Julkinen osoite on määritelty site-data.js-tiedostossa (sami-severi.fi).",
+  "source": "https://github.com/samiseveri/Sami-Severi-Sj-berg-Portfolio",
+  "sourceHost": "github",
+  "topDiagram": "system-context",
+  "diagrams": [
+    "system-context",
+    "containers",
+    "components-frontend"
+  ]
+}

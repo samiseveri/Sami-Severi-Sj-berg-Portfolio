@@ -1,0 +1,122 @@
+{
+  "name": "Containers",
+  "level": 2,
+  "meta": {
+    "direction": "TB"
+  },
+  "nodes": [
+    {
+      "id": "portfolio-frontend",
+      "label": "Portfolio Frontend",
+      "path": "pages/",
+      "subDiagramId": "components-frontend",
+      "meta": {
+        "type": "frontend",
+        "technology": "javascript"
+      }
+    },
+    {
+      "id": "content-data",
+      "label": "Content Data Modules",
+      "meta": {
+        "type": "storage",
+        "technology": "javascript"
+      }
+    },
+    {
+      "id": "static-assets",
+      "label": "Static Assets",
+      "path": "assets/",
+      "meta": {
+        "type": "storage"
+      }
+    },
+    {
+      "id": "browser-local-storage",
+      "label": "Browser localStorage",
+      "meta": {
+        "type": "cache"
+      }
+    },
+    {
+      "id": "github-links",
+      "label": "GitHub",
+      "meta": {
+        "type": "external",
+        "technology": "github"
+      }
+    },
+    {
+      "id": "linkedin-profile",
+      "label": "LinkedIn",
+      "meta": {
+        "type": "external",
+        "technology": "linkedin"
+      }
+    },
+    {
+      "id": "instagram-profile",
+      "label": "Instagram",
+      "meta": {
+        "type": "external",
+        "technology": "instagram"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e-portfolio-frontend-content-data",
+      "source": "portfolio-frontend",
+      "target": "content-data",
+      "label": "imports SITE, PROJECTS, HOBBIES, SKILLS",
+      "meta": {
+        "type": "reads"
+      }
+    },
+    {
+      "id": "e-portfolio-frontend-static-assets",
+      "source": "portfolio-frontend",
+      "target": "static-assets",
+      "label": "loads images, CV, icons, gallery JSON",
+      "meta": {
+        "type": "reads"
+      }
+    },
+    {
+      "id": "e-portfolio-frontend-browser-local-storage",
+      "source": "portfolio-frontend",
+      "target": "browser-local-storage",
+      "label": "reads/writes theme preference",
+      "meta": {
+        "type": "writes"
+      }
+    },
+    {
+      "id": "e-portfolio-frontend-github-links",
+      "source": "portfolio-frontend",
+      "target": "github-links",
+      "label": "opens profile and project repository links",
+      "meta": {
+        "type": "calls"
+      }
+    },
+    {
+      "id": "e-portfolio-frontend-linkedin-profile",
+      "source": "portfolio-frontend",
+      "target": "linkedin-profile",
+      "label": "opens profile URL",
+      "meta": {
+        "type": "calls"
+      }
+    },
+    {
+      "id": "e-portfolio-frontend-instagram-profile",
+      "source": "portfolio-frontend",
+      "target": "instagram-profile",
+      "label": "opens profile URL",
+      "meta": {
+        "type": "calls"
+      }
+    }
+  ]
+}

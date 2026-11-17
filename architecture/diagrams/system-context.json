@@ -1,0 +1,86 @@
+{
+  "name": "System Context",
+  "level": 1,
+  "meta": {
+    "direction": "TB"
+  },
+  "nodes": [
+    {
+      "id": "visitor",
+      "label": "Visitor",
+      "meta": {
+        "type": "person"
+      }
+    },
+    {
+      "id": "portfolio-site",
+      "label": "Portfolio Site",
+      "subDiagramId": "containers",
+      "meta": {
+        "type": "system"
+      }
+    },
+    {
+      "id": "github",
+      "label": "GitHub",
+      "meta": {
+        "type": "external",
+        "technology": "github"
+      }
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "meta": {
+        "type": "external",
+        "technology": "linkedin"
+      }
+    },
+    {
+      "id": "instagram",
+      "label": "Instagram",
+      "meta": {
+        "type": "external",
+        "technology": "instagram"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e-visitor-portfolio-site",
+      "source": "visitor",
+      "target": "portfolio-site",
+      "label": "browses pages in the browser",
+      "meta": {
+        "type": "calls"
+      }
+    },
+    {
+      "id": "e-portfolio-site-github",
+      "source": "portfolio-site",
+      "target": "github",
+      "label": "links to profile and project repos",
+      "meta": {
+        "type": "calls"
+      }
+    },
+    {
+      "id": "e-portfolio-site-linkedin",
+      "source": "portfolio-site",
+      "target": "linkedin",
+      "label": "links to professional profile",
+      "meta": {
+        "type": "calls"
+      }
+    },
+    {
+      "id": "e-portfolio-site-instagram",
+      "source": "portfolio-site",
+      "target": "instagram",
+      "label": "links to personal profile",
+      "meta": {
+        "type": "calls"
+      }
+    }
+  ]
+}

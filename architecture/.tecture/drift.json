@@ -1,0 +1,152 @@
+{
+  "version": 1,
+  "generatedAt": "2026-11-17T20:01:16.760Z",
+  "generator": {
+    "name": "architecture-docs/evidence.mjs",
+    "skillVersion": "0.3.0"
+  },
+  "codegraphSchemaVersion": 16,
+  "staleIndex": false,
+  "summary": {
+    "errors": 0,
+    "warns": 0,
+    "infos": 13,
+    "nodesChecked": 8,
+    "edgesChecked": 5,
+    "nodesSkipped": 10,
+    "edgesSkipped": 10
+  },
+  "findings": [
+    {
+      "kind": "skipped-node",
+      "severity": "info",
+      "message": "node has no path — not verifiable against the index",
+      "diagramId": "system-context",
+      "nodeId": "portfolio-site"
+    },
+    {
+      "kind": "skipped-node",
+      "severity": "info",
+      "message": "path \"pages/\" exists on disk but has no indexed files (non-code artifact?)",
+      "diagramId": "containers",
+      "nodeId": "portfolio-frontend"
+    },
+    {
+      "kind": "skipped-node",
+      "severity": "info",
+      "message": "path \"assets/\" exists on disk but has no indexed files (non-code artifact?)",
+      "diagramId": "containers",
+      "nodeId": "static-assets"
+    },
+    {
+      "kind": "skipped-edge",
+      "severity": "info",
+      "message": "edge visitor -> portfolio-site (calls) is not statically verifiable (person/external/datastore endpoint or missing path)",
+      "edge": {
+        "diagramId": "system-context",
+        "sourceId": "visitor",
+        "targetId": "portfolio-site",
+        "type": "calls"
+      }
+    },
+    {
+      "kind": "skipped-edge",
+      "severity": "info",
+      "message": "edge portfolio-site -> github (calls) is not statically verifiable (person/external/datastore endpoint or missing path)",
+      "edge": {
+        "diagramId": "system-context",
+        "sourceId": "portfolio-site",
+        "targetId": "github",
+        "type": "calls"
+      }
+    },
+    {
+      "kind": "skipped-edge",
+      "severity": "info",
+      "message": "edge portfolio-site -> linkedin (calls) is not statically verifiable (person/external/datastore endpoint or missing path)",
+      "edge": {
+        "diagramId": "system-context",
+        "sourceId": "portfolio-site",
+        "targetId": "linkedin",
+        "type": "calls"
+      }
+    },
+    {
+      "kind": "skipped-edge",
+      "severity": "info",
+      "message": "edge portfolio-site -> instagram (calls) is not statically verifiable (person/external/datastore endpoint or missing path)",
+      "edge": {
+        "diagramId": "system-context",
+        "sourceId": "portfolio-site",
+        "targetId": "instagram",
+        "type": "calls"
+      }
+    },
+    {
+      "kind": "skipped-edge",
+      "severity": "info",
+      "message": "edge portfolio-frontend -> content-data (reads) is not statically verifiable (person/external/datastore endpoint or missing path)",
+      "edge": {
+        "diagramId": "containers",
+        "sourceId": "portfolio-frontend",
+        "targetId": "content-data",
+        "type": "reads"
+      }
+    },
+    {
+      "kind": "skipped-edge",
+      "severity": "info",
+      "message": "edge portfolio-frontend -> static-assets (reads) is not statically verifiable (person/external/datastore endpoint or missing path)",
+      "edge": {
+        "diagramId": "containers",
+        "sourceId": "portfolio-frontend",
+        "targetId": "static-assets",
+        "type": "reads"
+      }
+    },
+    {
+      "kind": "skipped-edge",
+      "severity": "info",
+      "message": "edge portfolio-frontend -> browser-local-storage (writes) is not statically verifiable (person/external/datastore endpoint or missing path)",
+      "edge": {
+        "diagramId": "containers",
+        "sourceId": "portfolio-frontend",
+        "targetId": "browser-local-storage",
+        "type": "writes"
+      }
+    },
+    {
+      "kind": "skipped-edge",
+      "severity": "info",
+      "message": "edge portfolio-frontend -> github-links (calls) is not statically verifiable (person/external/datastore endpoint or missing path)",
+      "edge": {
+        "diagramId": "containers",
+        "sourceId": "portfolio-frontend",
+        "targetId": "github-links",
+        "type": "calls"
+      }
+    },
+    {
+      "kind": "skipped-edge",
+      "severity": "info",
+      "message": "edge portfolio-frontend -> linkedin-profile (calls) is not statically verifiable (person/external/datastore endpoint or missing path)",
+      "edge": {
+        "diagramId": "containers",
+        "sourceId": "portfolio-frontend",
+        "targetId": "linkedin-profile",
+        "type": "calls"
+      }
+    },
+    {
+      "kind": "skipped-edge",
+      "severity": "info",
+      "message": "edge portfolio-frontend -> instagram-profile (calls) is not statically verifiable (person/external/datastore endpoint or missing path)",
+      "edge": {
+        "diagramId": "containers",
+        "sourceId": "portfolio-frontend",
+        "targetId": "instagram-profile",
+        "type": "calls"
+      }
+    }
+  ]
+}
